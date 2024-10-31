@@ -6,5 +6,5 @@ import java.io.IOException;
 
 public interface CitizenRepository {
     void registerCitizen(Citizen citizen);
-    //void saveCitizenToJson(Citizen citizen) throws IOException;
+    void saveCitizenToJson(Citizen citizen) throws IOException;
 }

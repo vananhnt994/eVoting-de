@@ -1,7 +1,9 @@
 package org.evoting.de.services;
-//import com.fasterxml.jackson.*;
+
+
 import org.evoting.de.entites.Citizen;
 import org.evoting.de.repositories.CitizenRepository;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,13 +19,14 @@ public class CitizenService implements CitizenRepository {
     }
 
 
-    /*@Override
+    @Override
     public void saveCitizenToJson(Citizen citizen) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
+        JSONObject jsonObject = new JSONObject();
 
         // Speichern des Bürgerobjekts als JSON-Datei
-        objectMapper.writeValue(new File(citizen.getId() + ".json"), citizen);
+        String CitizenJson = jsonObject.toString();
+        System.out.println(CitizenJson);
 
         System.out.println("Bürger gespeichert in JSON-Datei: " + citizen.getId() + ".json");
-    }*/
+    }
 }

@@ -6,17 +6,17 @@ public class Citizen {
     private String id;
     private String email;
     private String password;
-    private String familyName;
+    private String lastName;
     private String firstName;
     private String address;
     private Date birthDate;
 
     // Constructor
-    public Citizen(String id, String email, String password, String name, String firstName, String address, Date birthDate) {
+    public Citizen(String id, String email, String password, String lastName, String firstName, String address, Date birthDate) {
         this.id = id;
         this.email = email;
         this.password = password;
-        this.familyName = name;
+        this.lastName = lastName;
         this.firstName = firstName;
         this.address = address;
         this.birthDate = birthDate;
@@ -48,11 +48,11 @@ public class Citizen {
     }
 
     public String getfamilyName() {
-        return familyName;
+        return lastName;
     }
 
     public void setfamilyName(String name) {
-        this.familyName = name;
+        this.lastName = name;
     }
 
     public String getFirstName() {
