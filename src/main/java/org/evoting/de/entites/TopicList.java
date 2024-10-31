@@ -1,6 +1,6 @@
 package org.evoting.de.entites;
 
-import Entities.Topic;
+import org.evoting.de.entites.Topic;
 
 import java.util.List;
 

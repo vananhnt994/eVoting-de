@@ -6,7 +6,7 @@ public class Citizen {
     private String id;
     private String email;
     private String password;
-    private String name;
+    private String familyName;
     private String firstName;
     private String address;
     private Date birthDate;
@@ -16,7 +16,7 @@ public class Citizen {
         this.id = id;
         this.email = email;
         this.password = password;
-        this.name = name;
+        this.familyName = name;
         this.firstName = firstName;
         this.address = address;
         this.birthDate = birthDate;
@@ -47,12 +47,12 @@ public class Citizen {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getfamilyName() {
+        return familyName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setfamilyName(String name) {
+        this.familyName = name;
     }
 
     public String getFirstName() {
