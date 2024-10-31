@@ -1,9 +1,14 @@
 package org.evoting.de.entites;
 
 import java.util.Date;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+@Entity
 public class Citizen {
-    private String id;
+    private @Id
+    @GeneratedValue Long id;
     private String email;
     private String password;
     private String lastName;
@@ -11,26 +16,21 @@ public class Citizen {
     private String address;
     private Date birthDate;
 
-    // Constructor
-    public Citizen(String id, String email, String password, String lastName, String firstName, String address, Date birthDate) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.address = address;
-        this.birthDate = birthDate;
+
+    public Citizen() {
+
     }
 
     // Getters and Setters
-    public String getId() {
-        return id;
+    @JsonProperty("id")
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
-
+    @JsonProperty("email")
     public String getEmail() {
         return email;
     }
@@ -38,7 +38,7 @@ public class Citizen {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    @JsonProperty("password")
     public String getPassword() {
         return password;
     }
@@ -47,6 +47,7 @@ public class Citizen {
         this.password = password;
     }
 
+    @JsonProperty("familyName")
     public String getfamilyName() {
         return lastName;
     }
@@ -55,6 +56,7 @@ public class Citizen {
         this.lastName = name;
     }
 
+    @JsonProperty("firstName")
     public String getFirstName() {
         return firstName;
     }
@@ -63,6 +65,7 @@ public class Citizen {
         this.firstName = firstName;
     }
 
+    @JsonProperty("address")
     public String getAddress() {
         return address;
     }
@@ -71,6 +74,7 @@ public class Citizen {
         this.address = address;
     }
 
+    @JsonProperty("birthDate")
     public Date getBirthDate() {
         return birthDate;
     }
