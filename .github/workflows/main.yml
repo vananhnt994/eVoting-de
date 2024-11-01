@@ -24,7 +24,7 @@ jobs:
     - name: Run JUnit Tests
       run: mvn test
     - name: Publish Test Report
-      uses: /action-junit-report@v4
+      uses: actions/action-junit-report@v4
       if: success() || failure() # always run even if the previous step fails
       with:
           report_paths: '**/test-results/test/TEST-*.xml'
