@@ -47,21 +47,12 @@
             <artifactId>json</artifactId>
             <version>20240303</version>
         </dependency>
-
-        <plugins>
-           <plugin>
-             <groupId>org.apache.maven.plugins</groupId>
-             <artifactId>maven-surefire-plugin</artifactId>
-             <version>3.5.1</version>
-             <dependencies>
-               <dependency>
-                 <groupId>org.apache.maven.surefire</groupId>
-                 <artifactId>surefire-junit47</artifactId>
-                 <version>3.5.1</version>
-               </dependency>
-             </dependencies>
-           </plugin>
-         </plugins>
+        <dependency>
+          <groupId>org.apache.maven.surefire</groupId>
+          <artifactId>surefire-junit47</artifactId>
+          <version>3.5.1</version>
+        </dependency>
+             
 
 
     </dependencies>
