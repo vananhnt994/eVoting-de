@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
 
@@ -24,8 +27,13 @@ jobs:
     - name: Run JUnit Tests
       run: mvn test
     - name: Publish Test Report
+      uses: dorny/test-reporter@v1
       if: success() || failure() # always run even if the previous step fails
-      uses: scacap/action-surefire-report@v1
+      with: 
+        name: Maven Tests
+        path: target/surefire-reports/*.xml
+        reporter: java-junit
+      
 
  
   
