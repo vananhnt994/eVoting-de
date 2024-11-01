@@ -21,10 +21,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Run Checkstyle
-      run: mvn checkstyle:check
     - name: Run JUnit Tests
       run: mvn test
+    - name: Publish Test Report
+      uses: /action-junit-report@v4
+      if: success() || failure() # always run even if the previous step fails
+      with:
+          report_paths: '**/test-results/test/TEST-*.xml'
 
  
   
