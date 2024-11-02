@@ -47,6 +47,7 @@
             <artifactId>json</artifactId>
             <version>20240303</version>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-report-plugin -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
