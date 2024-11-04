@@ -1,5 +1,7 @@
 package org.evoting.de.entites;
 
+import jakarta.persistence.Entity;
+
 public class Topic {
     private String id;
     private String topicDescription;

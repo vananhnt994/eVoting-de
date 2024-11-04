@@ -1,32 +1,61 @@
 package org.evoting.de.services;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import org.evoting.de.entites.Citizen;
 import org.evoting.de.repositories.CitizenRepository;
-import org.json.JSONObject;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.IOException;
-public class CitizenService implements CitizenRepository {
-    @Override
-    public void registerCitizen(Citizen citizen) {
-        // Hier können Sie Logik hinzufügen, um den Bürger zu registrieren,
-        // z.B. in einer Datenbank oder einer Liste.
-        System.out.println("Bürger registriert: " + citizen.getfamilyName());
+import java.util.ArrayList;
+import java.util.List;
 
-        // Beispiel: Speichern in einer Liste (nicht implementiert hier)
-        // citizensList.add(citizen);
+@Service
+public class CitizenService {
+    ObjectMapper objectMapper = new ObjectMapper();
+    private final CitizenRepository citizenRepository;
+
+    @Autowired
+    public CitizenService(CitizenRepository citizenRepository) {
+        this.citizenRepository = citizenRepository;
     }
 
+    public Citizen findByEmail(String email) {
+        return citizenRepository.findByEmail(email);
+    }
+    public void saveCitizen(Citizen citizen) throws Exception {
 
-    @Override
-    public void saveCitizenToJson(Citizen citizen) throws IOException {
-        JSONObject jsonObject = new JSONObject();
+        if (citizenRepository != null && findByEmail(citizen.getEmail()) != null) {
+            throw new Exception("E-Mail bereits registriert");
+        }
+        System.out.println("Bürger registriert: " + citizen.getfamilyName());
+        assert citizenRepository != null;
+        citizenRepository.save(citizen);
+    }
 
-        // Speichern des Bürgerobjekts als JSON-Datei
-        String CitizenJson = jsonObject.toString();
-        System.out.println(CitizenJson);
+    protected List<Citizen> getExistedCitizens() throws JsonProcessingException {
+        List<Citizen> citzens = new ArrayList<>();
+        try {
+            citzens = objectMapper.readValue("CitizenDB.json" , new TypeReference<List<Citizen>>() {});
+        } catch (JsonProcessingException e){
+            System.out.println(e.getMessage());
+        }
+        return citzens;
+    }
 
-        System.out.println("Bürger gespeichert in JSON-Datei: " + citizen.getId() + ".json");
+    protected boolean checkIfCitizenExists(Citizen citizen) throws JsonProcessingException {
+        List<String> existedEmails = getExistedCitizens().stream().map(c -> citizen.getEmail()).toList();
+        System.out.println(existedEmails);
+        return existedEmails.contains(citizen.getEmail());
+
+    }
+    public boolean login(String email, String password) {
+        Citizen citizen = citizenRepository.findByEmail(email);
+        if (citizen != null) {
+            return citizen.getPassword().equals(password); // In der Praxis: Passwort-Hashing verwenden!
+        }
+        return false; // Bürger nicht gefunden oder falsches Passwort
     }
 }

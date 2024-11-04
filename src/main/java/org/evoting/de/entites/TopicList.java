@@ -1,8 +1,10 @@
 package org.evoting.de.entites;
 
+import jakarta.persistence.Entity;
 import org.evoting.de.entites.Topic;
 
 import java.util.List;
+
 
 public class TopicList {
     private String id;

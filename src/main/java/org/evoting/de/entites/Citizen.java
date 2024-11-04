@@ -4,11 +4,13 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 @Entity
 public class Citizen {
-    private @Id
-    @GeneratedValue Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; // Eindeutige ID für den Benutzer
     private String email;
     private String password;
     private String lastName;
@@ -21,10 +23,8 @@ public class Citizen {
 
     }
 
-    // Getters and Setters
-    @JsonProperty("id")
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
@@ -81,5 +81,8 @@ public class Citizen {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
+    }
+    public boolean login(String inputPassword) {
+        return this.password.equals(inputPassword);
     }
 }

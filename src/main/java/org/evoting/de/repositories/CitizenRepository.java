@@ -2,9 +2,12 @@ package org.evoting.de.repositories;
 
 import org.evoting.de.entites.Citizen;
 
-import java.io.IOException;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
-public interface CitizenRepository {
-    void registerCitizen(Citizen citizen);
-    void saveCitizenToJson(Citizen citizen) throws IOException;
+@Repository
+public interface CitizenRepository extends JpaRepository<Citizen, Long> {
+    @Query("Select c from Citizen c Where c.email =:email")
+    Citizen findByEmail(String email);
 }
