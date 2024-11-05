@@ -1,4 +1,4 @@
-package org.evoting.de.entites;
+package org.evoting.de.domain;
 
 import java.time.LocalDate;
 

@@ -1,7 +1,4 @@
-package org.evoting.de.entites;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
+package org.evoting.de.domain;
 
 @Entity
 public class VotingResult {
