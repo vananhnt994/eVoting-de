@@ -1,9 +1,16 @@
 package org.evoting.de.entites;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 
+@Entity
 public class VotingResult {
+    @Id
+    @NotNull
     private String id;
     private String result; // Corresponds to ergebnis
     private String resultDistribution; // Corresponds to ergebnisverteilung
+    @Id
     private String topicId; // Corresponds to themaId
     private String resultDescription; // Corresponds to ergebnisBeschreibung
 
