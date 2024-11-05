@@ -32,13 +32,14 @@ public class Citizen {
     }
 
     // Constructor with required parameters, ensuring password is hashed
-    public Citizen(String email, String firstName, String lastName, String password, LocalDate birthDate) {
+    /*public Citizen(String email, String firstName, String lastName, String password, LocalDate birthDate) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        setPassword(password); // Automatically hash password on setting
+        this.password = password;
+        //setPassword(password); // Automatically hash password on setting
         this.birthDate = birthDate;
-    }
+    }*/
     public Long getId() {
         return id;
     }
@@ -59,9 +60,9 @@ public class Citizen {
         return password;
     }
 
-    /*public void setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
-    }*/
+    }
 
     @JsonProperty("familyName")
     public String getfamilyName() {
@@ -98,16 +99,16 @@ public class Citizen {
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
-    /*public boolean login(String inputPassword) {
+    public boolean login(String inputPassword) {
         return this.password.equals(inputPassword);
-    }*/
+    }
 
     // Custom login method with hashed password check
-    public boolean login(String inputPassword) {
+    /*public boolean login(String inputPassword) {
         return BCrypt.checkpw(inputPassword, this.password);
     }
     // Hash the password using bcrypt
     public void setPassword(String password) {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
-    }
+    }*/
 }
