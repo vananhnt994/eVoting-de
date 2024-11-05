@@ -1,9 +1,7 @@
-package org.evoting.de.entites;
+package org.evoting.de.domain;
 
 import jakarta.persistence.*;
-import org.evoting.de.entites.Topic;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity

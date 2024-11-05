@@ -3,7 +3,7 @@ package org.evoting.de.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import org.evoting.de.entites.Citizen;
+import org.evoting.de.domain.Citizen;
 import org.evoting.de.repositories.CitizenRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class CitizenService {
     public Citizen findByEmail(String email) {
         return citizenRepository.findByEmail(email);
     }
-    public void saveCitizen(Citizen citizen) throws Exception {
+    public Citizen saveCitizen(Citizen citizen) throws Exception {
 
         if (citizenRepository != null && findByEmail(citizen.getEmail()) != null) {
             throw new Exception("E-Mail bereits registriert");
@@ -33,6 +33,7 @@ public class CitizenService {
         System.out.println("Bürger registriert: " + citizen.getfamilyName());
         assert citizenRepository != null;
         citizenRepository.save(citizen);
+        return citizen;
     }
 
     protected List<Citizen> getExistedCitizens() throws JsonProcessingException {

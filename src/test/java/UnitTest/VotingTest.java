@@ -2,7 +2,7 @@ package UnitTest;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.evoting.de.entites.Vote;
+import org.evoting.de.domain.Vote;
 
 import java.util.Date;
 

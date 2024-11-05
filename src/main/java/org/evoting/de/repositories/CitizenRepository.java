@@ -1,6 +1,6 @@
 package org.evoting.de.repositories;
 
-import org.evoting.de.entites.Citizen;
+import org.evoting.de.domain.Citizen;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

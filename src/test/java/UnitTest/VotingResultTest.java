@@ -1,6 +1,6 @@
 package UnitTest;
 
-import org.evoting.de.entites.VotingResult;
+import org.evoting.de.domain.VotingResult;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,6 +1,4 @@
-package org.evoting.de.entites;
-
-import jakarta.persistence.Entity;
+package org.evoting.de.domain;
 
 public class Administrator {
     private String id;
