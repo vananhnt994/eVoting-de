@@ -1,16 +1,26 @@
 package org.evoting.de.entites;
 
-import java.util.Date;
+//import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDateTime;
+
+@Entity
 public class Vote {
+    @Id
+    @NotNull
     private String id;
+    @Id
+    @NotNull
     private String topicId; // Corresponds to themaId
     private boolean votingOptions; // Corresponds to abstimmungsmöglichkeiten
-    private Date startDate; // Corresponds to startdatum
-    private Date endDate; // Corresponds to enddatum
+    private LocalDateTime  startDate; // Corresponds to startdatum
+    private LocalDateTime  endDate; // Corresponds to enddatum
 
     // Constructor
-    public Vote(String id, String topicId, boolean votingOptions, Date startDate, Date endDate) {
+    public Vote(String id, String topicId, boolean votingOptions, LocalDateTime startDate, LocalDateTime endDate) {
         this.id = id;
         this.topicId = topicId;
         this.votingOptions = votingOptions;
@@ -43,19 +53,19 @@ public class Vote {
         this.votingOptions = votingOptions;
     }
 
-    public Date getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 }
