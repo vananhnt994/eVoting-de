@@ -1,15 +1,25 @@
 package org.evoting.de.entites;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 
+import java.util.Set;
+
+@Entity
 public class Topic {
+    @Id
     private String id;
     private String topicDescription;
 
+    @ManyToMany(mappedBy = "topics")
+    private Set<TopicList> topicLists; // Beziehung zur TopicList
     // Constructor
-    public Topic(String id, String topicDescription) {
+    public Topic(String id, String topicDescriptio) {
         this.id = id;
         this.topicDescription = topicDescription;
+    }
+
+    public Topic() {
+
     }
 
     // Getters and Setters

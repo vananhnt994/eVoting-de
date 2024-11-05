@@ -1,23 +1,26 @@
 package org.evoting.de.entites;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import org.evoting.de.entites.Topic;
 
 import java.util.List;
+import java.util.Set;
 
-
+@Entity
 public class TopicList {
+    @Id
     private String id;
-    private String postalCode; // Corresponds to plz
-    private String districtName; // Corresponds to landkreisName
-    private List<Topic> topicList; // Corresponds to themenliste
-
+    private String cityName; // Corresponds to landkreisName
+    @ManyToMany
+    private Set<Topic> topics; // Beziehung zu Topics
     // Constructor
-    public TopicList(String id, String postalCode, String districtName, List<Topic> topicList) {
+    public TopicList(String id, String postalCode, String districtName) {
         this.id = id;
-        this.postalCode = postalCode;
-        this.districtName = districtName;
-        this.topicList = topicList;
+        this.cityName = districtName;
+    }
+
+    public TopicList() {
+
     }
 
     // Getters and Setters
@@ -29,27 +32,12 @@ public class TopicList {
         this.id = id;
     }
 
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
     public String getDistrictName() {
-        return districtName;
+        return cityName;
     }
 
     public void setDistrictName(String districtName) {
-        this.districtName = districtName;
+        this.cityName = districtName;
     }
 
-    public List<Topic> getTopicList() {
-        return topicList;
-    }
-
-    public void setTopicList(List<Topic> topicList) {
-        this.topicList = topicList;
-    }
 }
