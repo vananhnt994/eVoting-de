@@ -5,13 +5,13 @@ import jakarta.persistence.Entity;
 public class Administrator {
     private String id;
     private String email;
-    private String passwort;
+    private String password;
 
-    // Konstruktor
-    public Administrator(String id, String email, String passwort) {
+    // Constructor
+    public Administrator(String id, String email, String password) {
         this.id = id;
         this.email = email;
-        this.passwort = passwort;
+        this.password = password;
     }
 
     // Getter und Setter
@@ -31,11 +31,11 @@ public class Administrator {
         this.email = email;
     }
 
-    public String getPasswort() {
-        return passwort;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswort(String passwort) {
-        this.passwort = passwort;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
