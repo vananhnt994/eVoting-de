@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 public class Vote {
@@ -16,11 +17,11 @@ public class Vote {
     @NotNull
     private String topicId; // Corresponds to themaId
     private boolean votingOptions; // Corresponds to abstimmungsmöglichkeiten
-    private LocalDateTime  startDate; // Corresponds to startdatum
-    private LocalDateTime  endDate; // Corresponds to enddatum
+    private Date  startDate; // Corresponds to startdatum
+    private Date endDate; // Corresponds to enddatum
 
     // Constructor
-    public Vote(String id, String topicId, boolean votingOptions, LocalDateTime startDate, LocalDateTime endDate) {
+    public Vote(String id, String topicId, boolean votingOptions, Date startDate, Date endDate) {
         this.id = id;
         this.topicId = topicId;
         this.votingOptions = votingOptions;
@@ -53,19 +54,19 @@ public class Vote {
         this.votingOptions = votingOptions;
     }
 
-    public LocalDateTime getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDateTime getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 }
