@@ -8,7 +8,7 @@ import org.evoting.de.entites.Vote;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class VotingTestLLM {
+public class VotingLLMTest {
 
     private static final String TEST_VOTE_ID = "1";
     private static final String TEST_TOPIC_ID = "topic1";
