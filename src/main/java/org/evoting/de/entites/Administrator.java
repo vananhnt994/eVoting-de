@@ -1,10 +1,18 @@
 package org.evoting.de.entites;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
+@Entity
 public class Administrator {
+    @Id
     private String id;
+    @Email
+    @NotNull
     private String email;
+    @NotNull
     private String password;
 
     // Constructor
@@ -38,4 +46,5 @@ public class Administrator {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }
