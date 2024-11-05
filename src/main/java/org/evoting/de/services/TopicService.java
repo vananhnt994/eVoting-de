@@ -17,7 +17,11 @@ public class TopicService {
     public TopicService(TopicRepository topicRepository) {
         this.topicRepository = topicRepository;
     }
-    public List<Topic> getTopicsByAddress(String address) {
-        return topicRepository.findByCityName(address); // Verwende das Repository zur Abfrage der Themen
+    public List<Topic> getTopicsByAddress(String address) throws Exception {
+        List<Topic> topics = topicRepository.findByCityName(address); // Verwende das Repository zur Abfrage der Themen
+        if (topics.isEmpty()) {
+            throw new Exception("No topics found for address: " + address);
+        }
+        return topics;
     }
 }
