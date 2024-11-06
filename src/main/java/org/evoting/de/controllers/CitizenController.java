@@ -45,6 +45,7 @@ public class CitizenController {
         }
     }
 
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Citizen citizen) throws Exception {
         boolean success = false;
