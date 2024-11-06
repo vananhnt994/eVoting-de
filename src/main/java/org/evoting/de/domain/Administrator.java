@@ -1,15 +1,26 @@
 package org.evoting.de.domain;
 
-public class Administrator {
-    private String id;
-    private String email;
-    private String passwort;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
-    // Konstruktor
-    public Administrator(String id, String email, String passwort) {
+
+@Entity
+public class Administrator {
+    @Id
+    private String id;
+    @Email
+    @NotNull
+    private String email;
+    @NotNull
+    private String password;
+
+    // Constructor
+    public Administrator(String id, String email, String password) {
         this.id = id;
         this.email = email;
-        this.passwort = passwort;
+        this.password = password;
     }
 
     // Getter und Setter
@@ -29,11 +40,11 @@ public class Administrator {
         this.email = email;
     }
 
-    public String getPasswort() {
-        return passwort;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswort(String passwort) {
-        this.passwort = passwort;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

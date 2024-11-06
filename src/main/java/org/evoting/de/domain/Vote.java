@@ -1,12 +1,23 @@
 package org.evoting.de.domain;
 
+//import java.util.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 
+@Entity
 public class Vote {
+    @Id
+    @NotNull
     private String id;
+    @Id
+    @NotNull
     private String topicId; // Corresponds to themaId
     private boolean votingOptions; // Corresponds to abstimmungsmöglichkeiten
-    private Date startDate; // Corresponds to startdatum
+    private Date  startDate; // Corresponds to startdatum
     private Date endDate; // Corresponds to enddatum
 
     // Constructor
