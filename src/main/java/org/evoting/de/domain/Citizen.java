@@ -60,9 +60,9 @@ public class Citizen {
         return password;
     }
 
-    public void setPassword(String password) {
+    /*public void setPassword(String password) {
         this.password = password;
-    }
+    }*/
 
     @JsonProperty("familyName")
     public String getfamilyName() {
@@ -99,16 +99,16 @@ public class Citizen {
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
-    public boolean login(String inputPassword) {
+    /*public boolean login(String inputPassword) {
         return this.password.equals(inputPassword);
-    }
+    }*/
 
     // Custom login method with hashed password check
-    /*public boolean login(String inputPassword) {
+    public boolean login(String inputPassword) {
         return BCrypt.checkpw(inputPassword, this.password);
     }
     // Hash the password using bcrypt
     public void setPassword(String password) {
         this.password = BCrypt.hashpw(password, BCrypt.gensalt());
-    }*/
+    }
 }

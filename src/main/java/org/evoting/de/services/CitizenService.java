@@ -57,6 +57,6 @@ public class CitizenService {
         if (citizen != null) {
             return citizen.getPassword().equals(password); // In der Praxis: Passwort-Hashing verwenden!
         }
-        return false; // Bürger nicht gefunden oder falsches Passwort
+        return false;
     }
 }
