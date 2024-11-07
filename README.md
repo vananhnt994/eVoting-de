@@ -18,7 +18,7 @@
 - Van Anh: Nützliche Git-Tools und Plattformen (z. B. GitHub)
 
 ## Inhalt
-- [GitHub Actions für CI/CD](#github-actions-für-ci/cd)
+- [GitHub Actions für CI/CD](#github-actions-für-cicd) 
 - [Was ist Git und warum sollte es verwendet werden?](#was-ist-git-und-warum-sollte-es-verwenden-werden)
 - [Grundlegende Git-Befehle](#grundlegende-git-befehle)
 - [Branches und ihre Nutzung](#branches-und-ihre-nutzung)
