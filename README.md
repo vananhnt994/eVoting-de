@@ -21,9 +21,9 @@
 - [Nützliche Git-Tools und Plattformen](#nützliche-git-tools-und-plattformen)
 
 ## GitHub Actions für CI/CD
-Zur Umsetzung von CI/CD, wurde ein GitHub Actions Workflow hinzugefügt, welcher für den Build des Projektes mit Maven, sowie für die Ausführung der JUnit-Tests zuständig ist ("Java CI with Maven").
-Die Junit-Tests, die durchgeführt werden können unter dem Pfad "eVoting-de/src/test/java/UnitTest" gefunden werden.
-Damit sichergestellt wird, dass ein Merge in Main nur erfolgen kann, wenn der Build und die JUnit-Tests erfolgreich durchlaufen wurden, wurde eine Branch Protection Rule erstellt.
+Zur Umsetzung von CI/CD, wurde ein GitHub Actions Workflow hinzugefügt, welcher für den Build des Projektes mit Maven, sowie für die Ausführung der JUnit-Tests zuständig ist ("Java CI with Maven"). </br>
+Die Junit-Tests, die durchgeführt werden können unter dem Pfad "eVoting-de/src/test/java/UnitTest" gefunden werden. </br>
+Damit sichergestellt wird, dass ein Merge in Main nur erfolgen kann, wenn der Build und die JUnit-Tests erfolgreich durchlaufen wurden, wurde eine Branch Protection Rule erstellt. </br>
 Zusätzlich wurde ein weiterer Workflow erstellt, in dem der Super-Linter durchläuft, um den Code auf Formatierung und Best-Practices zu überprüfen ("Lint Code Base").
 
 ## Was ist Git und warum sollte es verwenden werden?
