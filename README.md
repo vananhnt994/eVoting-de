@@ -10,12 +10,6 @@
 
 </div>
 
-## Aufgabenteilung
-- Lisa: Git mit IntelliJ/PyCharm benutzen: Local Repository und Remote Repository
-- Valentin: Grundlegende Git-Befehle (z. B. git init, git add, git commit, git push)
-- Tjorven: Was ist Git und warum sollte es verwendet werden?
-- Van Anh: Branches und ihre Nutzung, Umgang mit Merge-Konflikten
-- Van Anh: Nützliche Git-Tools und Plattformen (z. B. GitHub)
 
 ## Inhalt
 - [GitHub Actions für CI/CD](#github-actions-für-cicd) 
