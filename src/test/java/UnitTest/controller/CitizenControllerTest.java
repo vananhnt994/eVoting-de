@@ -28,7 +28,7 @@ public class CitizenControllerTest {
     }
 
     @Test
-    void testRegisterNewCitizen_Success() throws Exception {
+    void testRegisterNewCitizenSuccess() throws Exception {
         // Arrange
         Citizen citizen = new Citizen();
         citizen.setEmail("test@example.com");
@@ -47,7 +47,7 @@ public class CitizenControllerTest {
     }
 
     @Test
-    void testRegisterNewCitizen_InvalidEmail() throws Exception {
+    void testRegisterNewCitizenInvalidEmail() throws Exception {
         // Arrange
         Citizen citizen = new Citizen();
 
@@ -63,7 +63,7 @@ public class CitizenControllerTest {
     }
 
     @Test
-    void testRegisterNewCitizen_InvalidPassword() {
+    void testRegisterNewCitizenInvalidPassword() {
         Citizen citizen = new Citizen();
         try {
             citizen.setEmail("test@example.com");
@@ -75,7 +75,7 @@ public class CitizenControllerTest {
     }
 
     @Test
-    void testLogin_Success() throws Exception {
+    void testLoginSuccess() throws Exception {
         // Arrange
         Citizen citizen = new Citizen();
         citizen.setEmail("test@example.com");
@@ -95,7 +95,7 @@ public class CitizenControllerTest {
     }
 
     @Test
-    void testLogin_InvalidEmail() {
+    void testLoginInvalidEmail() {
         // Arrange
         Citizen citizen = new Citizen();
         try {
@@ -110,7 +110,7 @@ public class CitizenControllerTest {
     }
 
     @Test
-    void testLogin_Failed() throws Exception {
+    void testLoginFailed() throws Exception {
         // Arrange
         Citizen citizen = new Citizen();
         ResponseEntity<?> response = null;

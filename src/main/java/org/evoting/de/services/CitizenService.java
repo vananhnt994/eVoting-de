@@ -9,6 +9,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +37,20 @@ public class CitizenService {
         citizenRepository.save(citizen);
         return citizen;
     }
+    protected void saveCitizeninJsonFile(Citizen citizen) throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        if (checkIfCitizenExists(citizen)) {
+            objectMapper.writeValue(new File("CitizenDB.json"), citizen);
+        }
+        throw new Exception("Bürger ist bereits registriert");
+    }
+
+    protected boolean checkIfCitizenExists(Citizen citizen) throws JsonProcessingException {
+        List<String> existedEmails = getExistedCitizens().stream().map(c -> citizen.getEmail()).toList();
+        System.out.println(existedEmails);
+        return existedEmails.contains(citizen.getEmail());
+
+    }
 
     protected List<Citizen> getExistedCitizens() throws JsonProcessingException {
         List<Citizen> citzens = new ArrayList<>();
@@ -46,16 +62,11 @@ public class CitizenService {
         return citzens;
     }
 
-    protected boolean checkIfCitizenExists(Citizen citizen) throws JsonProcessingException {
-        List<String> existedEmails = getExistedCitizens().stream().map(c -> citizen.getEmail()).toList();
-        System.out.println(existedEmails);
-        return existedEmails.contains(citizen.getEmail());
 
-    }
     public boolean login(String email, String password) {
         Citizen citizen = citizenRepository.findByEmail(email);
         if (citizen != null) {
-            return citizen.getPassword().equals(password); // In der Praxis: Passwort-Hashing verwenden!
+            return citizen.getPassword().equals(password);
         }
         return false;
     }
