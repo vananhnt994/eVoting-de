@@ -1,4 +1,4 @@
-package org.evoting.de.config;
+package org.evoting.de.application.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
