@@ -26,13 +26,8 @@ public class CitizenController {
     @PostMapping(value = "/signup",consumes={"application/json"})
     public ResponseEntity<?> registerNewCitizen(@RequestBody Citizen citizen) throws Exception {
         try {
-            if (!validateEmail(citizen.getEmail())) {
-                throw new IllegalArgumentException("Invalid email format");
-            }
-
-            if (!validatePassword(citizen.getPassword())) {
-                throw new IllegalArgumentException("Password must be at least 8 characters long and include a number, a lowercase letter, an uppercase letter, and a special character.");
-            }
+            if (!validateEmail(citizen.getEmail())) throwIllegalArgumentException("Invalid email format");
+            if(!validatePassword(citizen.getPassword())) throwIllegalArgumentException("Password must be at least 8 characters long and include a number, a lowercase letter, an uppercase letter, and a special character.");
             citizenService.saveCitizen(citizen);
             System.out.println("User " +citizen.getEmail() + " ist registriert");
             return ResponseEntity.ok().body(citizenService.findByEmail(citizen.getEmail()));
@@ -63,8 +58,10 @@ public class CitizenController {
     public boolean validateEmail(String email) {
         return Pattern.matches(EMAIL_REGEX, email);
     }
-
     public boolean validatePassword(String password) {
         return Pattern.matches(PASSWORD_REGEX, password);
+    }
+    public void throwIllegalArgumentException(String exceptionMessage) {
+        throw new IllegalArgumentException(exceptionMessage);
     }
 }

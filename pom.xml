@@ -67,7 +67,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -110,4 +109,24 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <reportsDirectory>${basedir}/target/surefire-reports/TEST-*.xml</reportsDirectory>
+                </configuration>
+                <executions>
+                <execution>
+                    <id>unit-test</id>
+                    <goals>
+                        <goal>verify</goal>
+                    </goals>
+                </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
