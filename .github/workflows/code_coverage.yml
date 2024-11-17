@@ -23,7 +23,7 @@ jobs:
         id: jacoco
         uses: madrapps/jacoco-report@v1.7.1
         with:
-          paths: ${{ github.workspace }}/**/target/site/jacoco/index.xml
+          paths: /home/runner/work/eVoting-de/eVoting-de/target/site/jacoco/index.xml
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 40
           min-coverage-changed-files: 60
