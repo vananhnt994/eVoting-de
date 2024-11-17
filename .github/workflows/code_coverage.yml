@@ -1,0 +1,27 @@
+name: Measure coverage
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Build
+        run: mvn -B package --file pom.xml
+      - name: Add coverage to PR
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.7.1
+        with:
+          paths: ${{ github.workspace }}/**/target/site/jacoco/index.xml
+          token: ${{ secrets.GITHUB_TOKEN }}

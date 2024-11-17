@@ -1,4 +1,4 @@
-package UnitTest;
+package org.evoting.de.unittests.entities;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

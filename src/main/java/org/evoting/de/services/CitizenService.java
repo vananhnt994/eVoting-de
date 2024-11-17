@@ -36,31 +36,6 @@ public class CitizenService {
         citizenRepository.save(citizen);
         return citizen;
     }
-    protected void saveCitizeninJsonFile(Citizen citizen) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        if (checkIfCitizenExists(citizen)) {
-            objectMapper.writeValue(new File("CitizenDB.json"), citizen);
-        }
-        throw new Exception("Bürger ist bereits registriert");
-    }
-
-    protected boolean checkIfCitizenExists(Citizen citizen) throws JsonProcessingException {
-        List<String> existedEmails = getExistedCitizens().stream().map(c -> citizen.getEmail()).toList();
-        System.out.println(existedEmails);
-        return existedEmails.contains(citizen.getEmail());
-
-    }
-
-    protected List<Citizen> getExistedCitizens() throws JsonProcessingException {
-        List<Citizen> citzens = new ArrayList<>();
-        try {
-            citzens = objectMapper.readValue("CitizenDB.json" , new TypeReference<List<Citizen>>() {});
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-        }
-        return citzens;
-    }
-
 
     public boolean login(String email, String password) {
         Citizen citizen = citizenRepository.findByEmail(email);
