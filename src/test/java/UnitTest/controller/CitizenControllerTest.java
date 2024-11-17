@@ -1,7 +1,7 @@
 package UnitTest.controller;
 
-import org.evoting.de.controllers.CitizenController;
-import org.evoting.de.domain.Citizen;
+import org.evoting.de.application.controllers.CitizenController;
+import org.evoting.de.domain.entities.Citizen;
 import org.evoting.de.services.CitizenService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

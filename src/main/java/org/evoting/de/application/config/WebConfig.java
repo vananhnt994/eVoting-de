@@ -1,4 +1,4 @@
-package org.evoting.de.config;
+package org.evoting.de.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

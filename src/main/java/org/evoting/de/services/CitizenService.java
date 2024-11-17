@@ -3,14 +3,13 @@ package org.evoting.de.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import org.evoting.de.domain.Citizen;
-import org.evoting.de.repositories.CitizenRepository;
+import org.evoting.de.domain.entities.Citizen;
+import org.evoting.de.infrastructure.repositories.CitizenRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package org.evoting.de.services;
 
-import org.evoting.de.domain.Topic;
-import org.evoting.de.repositories.TopicRepository;
+import org.evoting.de.domain.entities.Topic;
+import org.evoting.de.infrastructure.repositories.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

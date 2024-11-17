@@ -3,7 +3,7 @@ package UnitTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.evoting.de.domain.Vote;
+import org.evoting.de.domain.entities.Vote;
 
 import java.time.LocalDateTime;
 import java.util.Date;
