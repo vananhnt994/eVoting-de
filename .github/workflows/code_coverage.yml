@@ -23,13 +23,13 @@ jobs:
         uses: 'actions/upload-artifact@v4'
         with:
           name: report.xml
-          path: ${{ github.workspace }}/target/site/jacoco/index.xml
+          path: ${{ github.workspace }}/build/coverage-reports/jacoco.xml
   
       - name: Jacoco Report to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.7.1
         with:
-          paths: ${{ github.workspace }}/target/site/jacoco/index.xml
+          paths: ${{ github.workspace }}/build/coverage-reports/jacoco.xml
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 40
           min-coverage-changed-files: 60
@@ -39,7 +39,7 @@ jobs:
         id: jacoco_reporter
         uses: PavanMudigonda/jacoco-reporter@v5.0
         with:
-          coverage_results_path: 'target/site/jacoco/index.xml'
+          coverage_results_path: 'build/coverage-reports/jacoco.xml'
           coverage_report_title: 'Test coverage results'
           coverage_report_name: 'Test coverage results'
           github_token: ${{ secrets.GITHUB_TOKEN }}
