@@ -25,3 +25,7 @@ jobs:
         with:
           paths: ${{ github.workspace }}/**/target/site/jacoco/index.xml
           token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
+          title: Code Coverage
+          update-comment: true
