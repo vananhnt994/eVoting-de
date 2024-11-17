@@ -19,9 +19,48 @@ jobs:
           cache: maven
       - name: Run Build
         run: mvn -B package --file pom.xml
-      - name: Add coverage to PR
+      - name: Upload Report
+        uses: 'actions/upload-artifact@v4'
+        with:
+          name: report.xml
+          path: ${{ github.workspace }}/target/site/jacoco/index.xml
+  
+      - name: Jacoco Report to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.7.1
         with:
-          paths: ${{ github.workspace }}/**/target/site/jacoco/index.xml
+          paths: ${{ github.workspace }}/target/site/jacoco/index.xml
           token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
+          debug-mode: false
+          
+      - name: JaCoCo Code Coverage Report
+        id: jacoco_reporter
+        uses: PavanMudigonda/jacoco-reporter@v5.0
+        with:
+          coverage_results_path: 'target/site/jacoco/index.xml'
+          coverage_report_title: 'Test coverage results'
+          coverage_report_name: 'Test coverage results'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+  
+        # uploads the coverage-report.md artifact    
+      - name: Upload Code Coverage Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: "*/coverage-results.md"
+          retention-days: 1  
+            
+      - name: Get the Coverage info
+        run: |
+          echo "Total coverage coverage-overall ${{ steps.jacoco.outputs.coverage-overall }}"
+          echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
+          echo "Coverage coveragePercentage ${{ steps.jacoco_reporter.outputs.coveragePercentage }}"
+          echo "Coverage coveragePercentageString ${{ steps.jacoco_reporter.outputs.coveragePercentageString }}"
+  
+      - name: Publish Coverager Workflow Build Summary
+        run: echo "${{ steps.jacoco_reporter.outputs.coverageSummary }}" >> $GITHUB_STEP_SUMMARY
+        
+      - name: report
+        run: ls - R
