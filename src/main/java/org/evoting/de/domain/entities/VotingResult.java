@@ -1,4 +1,4 @@
-package org.evoting.de.domain;
+package org.evoting.de.domain.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;

@@ -1,4 +1,4 @@
-package org.evoting.de.domain;
+package org.evoting.de.domain.entities;
 
 import jakarta.persistence.*;
 
@@ -13,7 +13,7 @@ public class Topic {
     @ManyToMany(mappedBy = "topics")
     private Set<TopicList> topicLists; // Beziehung zur TopicList
     // Constructor
-    public Topic(String id, String topicDescriptio) {
+    public Topic(String id, String topicDescription) {
         this.id = id;
         this.topicDescription = topicDescription;
     }

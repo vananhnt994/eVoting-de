@@ -3,14 +3,13 @@ package org.evoting.de.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import org.evoting.de.domain.Citizen;
-import org.evoting.de.repositories.CitizenRepository;
+import org.evoting.de.domain.entities.Citizen;
+import org.evoting.de.infrastructure.repositories.CitizenRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,31 +36,6 @@ public class CitizenService {
         citizenRepository.save(citizen);
         return citizen;
     }
-    protected void saveCitizeninJsonFile(Citizen citizen) throws Exception {
-        ObjectMapper objectMapper = new ObjectMapper();
-        if (checkIfCitizenExists(citizen)) {
-            objectMapper.writeValue(new File("CitizenDB.json"), citizen);
-        }
-        throw new Exception("Bürger ist bereits registriert");
-    }
-
-    protected boolean checkIfCitizenExists(Citizen citizen) throws JsonProcessingException {
-        List<String> existedEmails = getExistedCitizens().stream().map(c -> citizen.getEmail()).toList();
-        System.out.println(existedEmails);
-        return existedEmails.contains(citizen.getEmail());
-
-    }
-
-    protected List<Citizen> getExistedCitizens() throws JsonProcessingException {
-        List<Citizen> citzens = new ArrayList<>();
-        try {
-            citzens = objectMapper.readValue("CitizenDB.json" , new TypeReference<List<Citizen>>() {});
-        } catch (JsonProcessingException e){
-            System.out.println(e.getMessage());
-        }
-        return citzens;
-    }
-
 
     public boolean login(String email, String password) {
         Citizen citizen = citizenRepository.findByEmail(email);

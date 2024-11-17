@@ -1,7 +1,7 @@
-package UnitTest.controller;
+package org.evoting.de.unittests.application.controller;
 
-import org.evoting.de.controllers.TopicController;
-import org.evoting.de.domain.Topic;
+import org.evoting.de.application.controllers.TopicController;
+import org.evoting.de.domain.entities.Topic;
 import org.evoting.de.services.TopicService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

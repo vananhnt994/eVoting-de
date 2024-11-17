@@ -1,11 +1,9 @@
-package UnitTest;
+package org.evoting.de.unittests.entities;
 
-import org.evoting.de.domain.VotingResult;
+import org.evoting.de.domain.entities.VotingResult;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class VotingResultLLMTest {
 
