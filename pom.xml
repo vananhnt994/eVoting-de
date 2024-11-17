@@ -134,6 +134,10 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <dataFile>${project.basedir}/target/jacoco.exec</dataFile>
+                            <outputDirectory>${project.basedir}/build/coverage-reports</outputDirectory>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>test-coverage-report</id>
@@ -141,6 +145,10 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                        <configuration>
+                            <dataFile>${project.basedir}/target/jacoco.exec</dataFile>
+                            <outputDirectory>${project.basedir}/build/coverage-reports</outputDirectory>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>jacoco-check</id>
