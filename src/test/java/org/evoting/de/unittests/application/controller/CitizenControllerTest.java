@@ -1,4 +1,4 @@
-package UnitTest.controller;
+package org.evoting.de.unittests.application.controller;
 
 import org.evoting.de.application.controllers.CitizenController;
 import org.evoting.de.domain.entities.Citizen;
