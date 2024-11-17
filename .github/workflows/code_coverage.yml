@@ -27,7 +27,7 @@ jobs:
   
       - name: Jacoco Report to PR
         id: jacoco
-        uses: madrapps/jacoco-report@v1.1
+        uses: madrapps/jacoco-report@v1.7.1
         with:
           path: ${{ github.workspace }}/target/site/jacoco/index.xml
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,18 +39,14 @@ jobs:
         id: jacoco_reporter
         uses: PavanMudigonda/jacoco-reporter@v5.0
         with:
-          coverage_results_path: ${{ github.workspace }}/target/site/jacoco/index.xml
-          coverage_report_name: Coverage
-          coverage_report_title: JaCoCo
+          coverage_results_path: 'target/site/jacoco/index.xml'
+          coverage_report_title: 'Test coverage results'
+          coverage_report_name: 'Test coverage results'
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          skip_check_run: false
-          minimum_coverage: 80
-          fail_below_threshold: false
-          publish_only_summary: false
   
         # uploads the coverage-report.md artifact    
       - name: Upload Code Coverage Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage-report
           path: "*/coverage-results.md"
