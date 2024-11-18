@@ -23,9 +23,7 @@ jobs:
         uses: 'actions/upload-artifact@v4'
         with:
           name: report
-          paths: | 
-            ${{ github.workspace }}/build/coverage-reports/jacoco.xml,
-            ${{ github.workspace }}/build/coverage-reports/index.html
+          path: ${{ github.workspace }}/build/coverage-reports/index.html
   
       - name: Jacoco Report to PR
         id: jacoco
