@@ -1,6 +1,6 @@
-package org.evoting.de.repositories;
+package org.evoting.de.infrastructure.repositories;
 
-import org.evoting.de.domain.Topic;
+import org.evoting.de.domain.entities.Topic;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

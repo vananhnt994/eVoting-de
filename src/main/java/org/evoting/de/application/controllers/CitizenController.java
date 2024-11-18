@@ -1,6 +1,6 @@
-package org.evoting.de.controllers;
+package org.evoting.de.application.controllers;
 
-import org.evoting.de.domain.Citizen;
+import org.evoting.de.domain.entities.Citizen;
 import org.evoting.de.services.CitizenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
