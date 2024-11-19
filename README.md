@@ -37,5 +37,5 @@
 ## Start Backend Server 
 - `mvn spring-boot:run`
 - Der Befehl mvn spring-boot:run wird verwendet, um eine Spring Boot-Anwendung zu starten. Hier ist eine kurze Erklärung der einzelnen Teile:
-- mvn: Dies ist das Kommandozeilenwerkzeug für Apache Maven, ein Build-Management-Tool für Java-Projekte.
-- spring-boot:run: Dies ist ein spezifisches Maven-Ziel (Goal) des Spring Boot Maven Plugins. Es führt die Anwendung aus, indem es die Hauptklasse (die mit der Annotation @SpringBootApplication gekennzeichnet ist) findet und die Anwendung startet.
+  - mvn: Dies ist das Kommandozeilenwerkzeug für Apache Maven, ein Build-Management-Tool für Java-Projekte.
+  - spring-boot:run: Dies ist ein spezifisches Maven-Ziel (Goal) des Spring Boot Maven Plugins. Es führt die Anwendung aus, indem es die Hauptklasse (die mit der Annotation @SpringBootApplication gekennzeichnet ist) findet und die Anwendung startet.
