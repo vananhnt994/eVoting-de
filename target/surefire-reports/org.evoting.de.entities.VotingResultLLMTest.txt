@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.evoting.de.entities.VotingResultLLMTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.evoting.de.entities.VotingResultLLMTest

@@ -1,8 +1,11 @@
 package org.evoting.de.unittests.application.controller;
 
-import org.evoting.de.application.controllers.CitizenController;
-import org.evoting.de.domain.entities.Citizen;
-import org.evoting.de.services.CitizenService;
+import org.evoting.de.user.application.controllers.CitizenController;
+import org.evoting.de.user.application.dto.CitizenDto;
+import org.evoting.de.user.domain.events.CitizenLoggedInEvent;
+import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
+import org.evoting.de.user.domain.model.citizen.Citizen;
+import org.evoting.de.user.application.services.CitizenService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -30,32 +33,41 @@ public class CitizenControllerTest {
     @Test
     void testRegisterNewCitizenSuccess() throws Exception {
         // Arrange
-        Citizen citizen = new Citizen();
-        citizen.setEmail("test@example.com");
-        citizen.setPassword("Password123!");
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail("test@example.com");
+        citizenDto.setPassword("Password123!");
 
-        when(citizenService.saveCitizen(any(Citizen.class))).thenReturn(citizen);
-        when(citizenService.findByEmail(citizen.getEmail())).thenReturn(citizen);
+        Citizen citizen = new Citizen();
+        citizen.setEmail(citizenDto.getEmail());
+        citizen.setPassword(citizenDto.getPassword());
+
+        when(citizenService.createCitizen(any(CitizenDto.class))).thenReturn(new CitizenRegisteredEvent(citizenDto.getId(),citizenDto.getEmail(),citizenDto.getPassword()));
+        when(citizenService.findByEmail(citizenDto.getEmail())).thenReturn(citizen);
 
         // Act
-        ResponseEntity<?> response = citizenController.registerNewCitizen(citizen);
+        ResponseEntity<?> response = citizenController.registerNewCitizen(citizenDto);
 
         // Assert
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals(citizen, response.getBody());
-        verify(citizenService).saveCitizen(any(Citizen.class));
+        assertEquals(citizenDto, response.getBody());
+        verify(citizenService).createCitizen(any(CitizenDto.class));
     }
 
     @Test
     void testRegisterNewCitizenInvalidEmail() throws Exception {
         // Arrange
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail("invalid-email");
+        citizenDto.setPassword("Password123!");
+
         Citizen citizen = new Citizen();
 
+
         try {
-            citizen.setEmail("invalid-email");
-            citizen.setPassword("Password123!");
+            citizen.setEmail(citizenDto.getEmail());
+            citizen.setPassword(citizenDto.getPassword());
         // Act
-            citizenController.registerNewCitizen(citizen);
+            citizenController.registerNewCitizen(citizenDto);
         } catch (Exception e) {
         // Assert
             assertTrue(e.getMessage().contains("Invalid email format"));
@@ -64,11 +76,11 @@ public class CitizenControllerTest {
 
     @Test
     void testRegisterNewCitizenInvalidPassword() {
-        Citizen citizen = new Citizen();
+        CitizenDto citizenDto = new CitizenDto();
         try {
-            citizen.setEmail("test@example.com");
-            citizen.setPassword("short");
-            citizenController.registerNewCitizen(citizen);
+            citizenDto.setEmail("test@example.com");
+            citizenDto.setPassword("short");
+            citizenController.registerNewCitizen(citizenDto);
         } catch (Exception e) {
             assertTrue(e.getMessage().contains("Password must be at least 8 characters long and include a number, a lowercase letter, an uppercase letter, and a special character."));
         }
@@ -77,31 +89,31 @@ public class CitizenControllerTest {
     @Test
     void testLoginSuccess() throws Exception {
         // Arrange
-        Citizen citizen = new Citizen();
-        citizen.setEmail("test@example.com");
-        citizen.setPassword("Password123!");
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail("test@example.com");
+        citizenDto.setPassword("Password123!");
 
-        when(citizenService.login(any(String.class), any(String.class))).thenReturn(true);
+        when(citizenService.login(citizenDto)).thenReturn(new CitizenLoggedInEvent(citizenDto.getEmail(), citizenDto.getPassword()));
 
-        when(citizenService.findByEmail(citizen.getEmail())).thenReturn(citizen);
+        when(citizenService.findByEmail(citizenDto.getEmail())).thenReturn(any(Citizen.class));
 
         // Act
-        ResponseEntity<?> response = citizenController.login(citizen);
+        ResponseEntity<?> response = citizenController.login(citizenDto);
 
         // Assert
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals(citizen, response.getBody());
-        verify(citizenService).login(any(String.class), any(String.class));
+        assertEquals(citizenDto, response.getBody());
+        verify(citizenService).login(any(CitizenDto.class));
     }
 
     @Test
     void testLoginInvalidEmail() {
         // Arrange
-        Citizen citizen = new Citizen();
+        CitizenDto citizenDto = new CitizenDto();
         try {
-            citizen.setEmail("invalid-email");
-            citizen.setPassword("Password123!");
-            citizenController.login(citizen);
+            citizenDto.setEmail("invalid-email");
+            citizenDto.setPassword("Password123!");
+            citizenController.login(citizenDto);
         } catch (Exception e) {
             assertTrue(e.getMessage().contains("Invalid email format"));
 
@@ -112,17 +124,17 @@ public class CitizenControllerTest {
     @Test
     void testLoginFailed() throws Exception {
         // Arrange
-        Citizen citizen = new Citizen();
+        CitizenDto citizenDto = new CitizenDto();
         ResponseEntity<?> response = null;
         try {
-            citizen.setEmail("test@example.com");
-            citizen.setPassword("WrongPassword");
-            when(citizenService.login(any(String.class), any(String.class))).thenReturn(false);
-            response = citizenController.login(citizen);
+            citizenDto.setEmail("test@example.com");
+            citizenDto.setPassword("WrongPassword");
+            when(citizenService.login(citizenDto)).thenReturn(new CitizenLoggedInEvent(citizenDto.getEmail(), citizenDto.getPassword()));
+            response = citizenController.login(citizenDto);
         } catch (Exception e) {
             assertEquals(401, response.getStatusCodeValue());
             assertNotNull(response.getBody());
-            verify(citizenService).login(any(String.class), any(String.class));
+            verify(citizenService).login(any(CitizenDto.class));
         }
     }
 }

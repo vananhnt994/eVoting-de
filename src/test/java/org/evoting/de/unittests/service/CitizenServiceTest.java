@@ -1,8 +1,10 @@
 package org.evoting.de.unittests.service;
 
-import org.evoting.de.domain.entities.Citizen;
-import org.evoting.de.infrastructure.repositories.CitizenRepository;
-import org.evoting.de.services.CitizenService;
+import org.evoting.de.user.application.dto.CitizenDto;
+import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
+import org.evoting.de.user.domain.model.citizen.Citizen;
+import org.evoting.de.user.domain.repository.CitizenRepository;
+import org.evoting.de.user.application.services.CitizenService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mindrot.jbcrypt.BCrypt;
@@ -43,28 +45,29 @@ public class CitizenServiceTest {
     }
 
     @Test
-    public void testSaveCitizen_Success() throws Exception {
+    public void testCreateCitizen_Success() throws Exception {
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail("new@example.com");
         Citizen citizen = new Citizen();
-        citizen.setEmail("new@example.com");
+        citizen.setEmail(citizenDto.getEmail());
+        when(citizenRepository.findByEmail(citizenDto.getEmail())).thenReturn(null);
 
-        when(citizenRepository.findByEmail(citizen.getEmail())).thenReturn(null);
-
-        Citizen savedCitizen = citizenService.saveCitizen(citizen);
+        CitizenRegisteredEvent savedCitizen = citizenService.createCitizen(citizenDto);
 
         assertNotNull(savedCitizen);
-        assertEquals(citizen.getEmail(), savedCitizen.getEmail());
+        assertEquals(citizenDto.getEmail(), savedCitizen.getEmail());
         verify(citizenRepository).save(citizen);
     }
 
     @Test
-    public void testSaveCitizen_EmailAlreadyRegistered() {
-        Citizen citizen = new Citizen();
-        citizen.setEmail("existing@example.com");
+    public void testCreateCitizen_EmailAlreadyRegistered() {
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail("existing@example.com");
 
-        when(citizenRepository.findByEmail(citizen.getEmail())).thenReturn(new Citizen());
+        when(citizenRepository.findByEmail(citizenDto.getEmail())).thenReturn(new Citizen());
 
         Exception exception = assertThrows(Exception.class, () -> {
-            citizenService.saveCitizen(citizen);
+            citizenService.createCitizen(citizenDto);
         });
 
         assertEquals("E-Mail bereits registriert", exception.getMessage());

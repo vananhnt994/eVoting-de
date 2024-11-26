@@ -1,0 +1,12 @@
+org\evoting\de\unittests\entities\VotingResultTest.class
+org\evoting\de\unittests\entities\TopicTest.class
+org\evoting\de\unittests\service\CitizenServiceTest.class
+org\evoting\de\unittests\entities\VotingTest.class
+org\evoting\de\unittests\application\controller\TopicControllerTest.class
+org\evoting\de\unittests\service\TopicServiceTest.class
+org\evoting\de\unittests\application\controller\CitizenControllerTest.class
+org\evoting\de\unittests\entities\VotingLLMTest.class
+org\evoting\de\unittests\entities\AdministratorTest.class
+org\evoting\de\unittests\entities\CitizenTest.class
+org\evoting\de\unittests\entities\VotingResultLLMTest.class
+org\evoting\de\unittests\entities\TopicListTest.class
