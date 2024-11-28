@@ -44,18 +44,15 @@ public class CitizenService {
     }
 
     public boolean login(CitizenDto citizenDto) {
-        try {
             Citizen citizen = citizenRepository.findByEmail(citizenDto.getEmail());
             if (citizen != null && validateCredentials(citizenDto.getEmail(), citizenDto.getPassword())) { // Beispielmethode zur Validierung
                 CitizenLoggedInEvent event = new CitizenLoggedInEvent(citizen.getEmail(),citizen.getPassword());
                 eventPublisher.publishEvent(event);
+                return true;
+
             } else {
                 throw new IllegalArgumentException("Invalid credentials");
             }
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
     }
 
     public boolean validateCredentials(String email, String password) {

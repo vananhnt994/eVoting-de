@@ -13,12 +13,12 @@ public class CitizenRegisteredEventListener {
     @EventListener
     public void handle(CitizenRegisteredEvent event) {
         logger.info("Neuer Bürger registriert:");
-        logger.info("ID: {}", event.getUserId());
+        logger.info("ID: {}", event.getId());
         logger.info("E-Mail: {}", event.getEmail());
         logger.info("Adresse: {}", event.getAdresse());
 
         if (event.getAdresse() == null || event.getAdresse().isEmpty()) {
-            logger.warn("Die Adresse für den Bürger mit ID {} ist leer.", event.getUserId());
+            logger.warn("Die Adresse für den Bürger mit ID {} ist leer.", event.getId());
         }
     }
 }

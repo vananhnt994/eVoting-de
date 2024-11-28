@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import org.springframework.boot.test.context.SpringBootTest;
 
 public class VotingLLMTest {
 

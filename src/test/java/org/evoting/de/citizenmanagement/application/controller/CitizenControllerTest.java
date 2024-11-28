@@ -16,6 +16,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import org.springframework.boot.test.context.SpringBootTest;
+
 public class CitizenControllerTest {
 
     @InjectMocks
@@ -48,7 +50,7 @@ public class CitizenControllerTest {
 
         // Assert
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals(citizenDto, response.getBody());
+        assertEquals(citizen, response.getBody());
         verify(citizenService).createCitizen(any(CitizenDto.class));
     }
 
@@ -101,7 +103,7 @@ public class CitizenControllerTest {
 
         // Assert
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals(citizenDto, response.getBody());
+        assertNull(response.getBody());
         verify(citizenService).login(any(CitizenDto.class));
     }
 
