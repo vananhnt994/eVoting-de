@@ -1,8 +1,8 @@
-package org.evoting.de.user.infrastructure.persistence;
+package org.evoting.de.citizenmanagement.infrastructure.persistence;
 
 import jakarta.persistence.EntityManager;
-import org.evoting.de.user.domain.model.citizen.Citizen;
-import org.evoting.de.user.domain.repository.CitizenRepository;
+import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
+import org.evoting.de.citizenmanagement.domain.repository.CitizenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

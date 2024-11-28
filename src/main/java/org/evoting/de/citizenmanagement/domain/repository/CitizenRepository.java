@@ -1,6 +1,6 @@
-package org.evoting.de.user.domain.repository;
+package org.evoting.de.citizenmanagement.domain.repository;
 
-import org.evoting.de.user.domain.model.citizen.Citizen;
+import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

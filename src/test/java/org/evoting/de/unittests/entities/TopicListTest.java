@@ -1,7 +1,7 @@
 package org.evoting.de.unittests.entities;
 
-import org.evoting.de.voting.domain.model.topic.Topic;
-import org.evoting.de.voting.domain.model.topic.TopicList;
+import org.evoting.de.topicmanagement.domain.model.topic.Topic;
+import org.evoting.de.topicmanagement.domain.model.topic.TopicList;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;

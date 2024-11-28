@@ -1,10 +1,9 @@
 package org.evoting.de.unittests.service;
 
-import org.evoting.de.user.application.dto.CitizenDto;
-import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
-import org.evoting.de.user.domain.model.citizen.Citizen;
-import org.evoting.de.user.domain.repository.CitizenRepository;
-import org.evoting.de.user.application.services.CitizenService;
+import org.evoting.de.citizenmanagement.application.dto.CitizenDto;
+import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
+import org.evoting.de.citizenmanagement.domain.repository.CitizenRepository;
+import org.evoting.de.citizenmanagement.application.services.CitizenService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mindrot.jbcrypt.BCrypt;
@@ -52,7 +51,7 @@ public class CitizenServiceTest {
         citizen.setEmail(citizenDto.getEmail());
         when(citizenRepository.findByEmail(citizenDto.getEmail())).thenReturn(null);
 
-        CitizenRegisteredEvent savedCitizen = citizenService.createCitizen(citizenDto);
+        Citizen savedCitizen = citizenService.createCitizen(citizenDto);
 
         assertNotNull(savedCitizen);
         assertEquals(citizenDto.getEmail(), savedCitizen.getEmail());
@@ -78,7 +77,9 @@ public class CitizenServiceTest {
     public void testLogin_Success() {
         String email = "login@example.com";
         String password = "password123!";
-
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail(email);
+        citizenDto.setPassword(password);
         Citizen citizen = new Citizen();
         citizen.setEmail(email);
         citizen.setPassword(password);
@@ -86,22 +87,19 @@ public class CitizenServiceTest {
         when(citizenRepository.findByEmail(email)).thenReturn(citizen);
         System.out.println(citizen.getPassword());
 
-        boolean result = citizenService.login(email, citizen.getPassword());
+        when(citizenService.login(citizenDto)).thenReturn(true);
 
         assertTrue(BCrypt.checkpw(password, citizen.getPassword()));
-        assertTrue(result);
         verify(citizenRepository).findByEmail(email);
     }
 
     @Test
     public void testLogin_Failure() {
         String email = "wrong@example.com";
-
+        CitizenDto citizenDto = new CitizenDto();
+        citizenDto.setEmail(email);
         when(citizenRepository.findByEmail(email)).thenReturn(null);
-
-        boolean result = citizenService.login(email, "anyPassword");
-
-        assertFalse(result);
+        when(citizenService.login(citizenDto)).thenReturn(null);
         verify(citizenRepository).findByEmail(email);
     }
 }

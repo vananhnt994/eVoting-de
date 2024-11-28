@@ -1,6 +1,6 @@
-package org.evoting.de.votemanagement.domain.repository;
+package org.evoting.de.topicmanagement.domain.repository;
 
-import org.evoting.de.votemanagement.domain.model.topic.Topic;
+import org.evoting.de.topicmanagement.domain.model.topic.Topic;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

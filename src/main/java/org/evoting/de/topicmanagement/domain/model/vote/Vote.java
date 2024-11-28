@@ -1,4 +1,4 @@
-package org.evoting.de.votemanagement.domain.model.vote;
+package org.evoting.de.topicmanagement.domain.model.vote;
 
 //import java.util.Date;
 import jakarta.persistence.Entity;
@@ -26,6 +26,10 @@ public class Vote {
         this.votingOptions = votingOptions;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public Vote() {
+
     }
 
     // Getters and Setters

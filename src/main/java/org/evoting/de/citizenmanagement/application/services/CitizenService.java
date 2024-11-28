@@ -1,11 +1,11 @@
-package org.evoting.de.user.application.services;
+package org.evoting.de.citizenmanagement.application.services;
 
 
-import org.evoting.de.user.application.dto.CitizenDto;
-import org.evoting.de.user.domain.events.CitizenLoggedInEvent;
-import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
-import org.evoting.de.user.domain.model.citizen.Citizen;
-import org.evoting.de.user.domain.repository.CitizenRepository;
+import org.evoting.de.citizenmanagement.application.dto.CitizenDto;
+import org.evoting.de.citizenmanagement.domain.events.CitizenLoggedInEvent;
+import org.evoting.de.citizenmanagement.domain.events.CitizenRegisteredEvent;
+import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
+import org.evoting.de.citizenmanagement.domain.repository.CitizenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;

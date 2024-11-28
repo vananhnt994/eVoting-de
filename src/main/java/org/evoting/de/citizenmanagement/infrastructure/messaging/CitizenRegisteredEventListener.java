@@ -1,6 +1,6 @@
-package org.evoting.de.user.infrastructure.messaging;
+package org.evoting.de.citizenmanagement.infrastructure.messaging;
 
-import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
+import org.evoting.de.citizenmanagement.domain.events.CitizenRegisteredEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

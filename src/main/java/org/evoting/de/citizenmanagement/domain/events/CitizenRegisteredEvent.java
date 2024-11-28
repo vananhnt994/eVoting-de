@@ -1,6 +1,4 @@
-package org.evoting.de.user.domain.events;
-
-import org.evoting.de.application.EventListener;
+package org.evoting.de.citizenmanagement.domain.events;
 
 public class CitizenRegisteredEvent {
     private final Long id;

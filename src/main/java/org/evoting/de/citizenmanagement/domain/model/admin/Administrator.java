@@ -1,4 +1,4 @@
-package org.evoting.de.user.domain.model.admin;
+package org.evoting.de.citizenmanagement.domain.model.admin;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

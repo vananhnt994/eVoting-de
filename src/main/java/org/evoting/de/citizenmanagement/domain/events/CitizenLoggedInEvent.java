@@ -1,4 +1,4 @@
-package org.evoting.de.user.domain.events;
+package org.evoting.de.citizenmanagement.domain.events;
 
 public class CitizenLoggedInEvent {
 

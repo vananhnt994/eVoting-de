@@ -1,9 +1,7 @@
-package org.evoting.de.user.application.controllers;
+package org.evoting.de.citizenmanagement.application.controllers;
 
-import org.evoting.de.user.application.dto.CitizenDto;
-import org.evoting.de.user.domain.events.CitizenLoggedInEvent;
-import org.evoting.de.user.domain.model.citizen.Citizen;
-import org.evoting.de.user.application.services.CitizenService;
+import org.evoting.de.citizenmanagement.application.dto.CitizenDto;
+import org.evoting.de.citizenmanagement.application.services.CitizenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,8 @@
 package org.evoting.de.unittests.application.controller;
 
 import org.evoting.de.application.controllers.TopicController;
-import org.evoting.de.voting.domain.model.topic.Topic;
-import org.evoting.de.voting.application.services.TopicService;
+import org.evoting.de.topicmanagement.domain.model.topic.Topic;
+import org.evoting.de.topicmanagement.application.services.TopicService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

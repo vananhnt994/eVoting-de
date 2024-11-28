@@ -1,4 +1,4 @@
-package org.evoting.de.user.domain.model.citizen;
+package org.evoting.de.citizenmanagement.domain.model.citizen;
 
 import java.time.LocalDate;
 
@@ -10,7 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
-import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
 import org.mindrot.jbcrypt.BCrypt;
 @Entity
 public class Citizen {

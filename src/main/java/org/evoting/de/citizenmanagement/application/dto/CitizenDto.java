@@ -1,4 +1,4 @@
-package org.evoting.de.user.application.dto;
+package org.evoting.de.citizenmanagement.application.dto;
 
 import java.time.LocalDate;
 
