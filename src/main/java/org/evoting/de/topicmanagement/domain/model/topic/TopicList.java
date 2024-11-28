@@ -1,4 +1,4 @@
-package org.evoting.de.voting.domain.model.topic;
+package org.evoting.de.votemanagement.domain.model.topic;
 
 import jakarta.persistence.*;
 

@@ -44,12 +44,11 @@ public class CitizenController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody CitizenDto citizenDto) throws Exception {
-        CitizenLoggedInEvent success = new CitizenLoggedInEvent(citizenDto.getEmail(), citizenDto.getPassword());
         try {
             if (!validateEmail(citizenDto.getEmail())) {
                 throw new IllegalArgumentException("Invalid email format");
             }
-            success = citizenService.login(citizenDto);
+            boolean result = citizenService.login(citizenDto);
             System.out.println("Login erfolgreich!");
             return ResponseEntity.status(200).body(citizenService.findByEmail(citizenDto.getEmail()));
         } catch (Exception e) {

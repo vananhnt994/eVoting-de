@@ -7,6 +7,7 @@ import org.evoting.de.user.domain.events.CitizenRegisteredEvent;
 import org.evoting.de.user.domain.model.citizen.Citizen;
 import org.evoting.de.user.domain.repository.CitizenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
@@ -20,12 +21,13 @@ public class CitizenService {
     public CitizenService(CitizenRepository citizenRepository) {
         this.citizenRepository = citizenRepository;
     }
-
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
     public Citizen findByEmail(String email) {
         return citizenRepository.findByEmail(email);
     }
 
-    public CitizenRegisteredEvent createCitizen(CitizenDto citizenDto) throws Exception {
+    public Citizen createCitizen(CitizenDto citizenDto) throws Exception {
 
         Citizen citizen = new Citizen();
         citizen.setEmail(citizenDto.getEmail());
@@ -35,19 +37,25 @@ public class CitizenService {
             throw new Exception("E-Mail bereits registriert");
         }
         assert citizenRepository != null;
-        citizenRepository.save(citizen);
-        return new CitizenRegisteredEvent(citizen.getId(), citizenDto.getEmail(), citizenDto.getAddress());
+        Citizen savedCitizen = citizenRepository.save(citizen);
+        CitizenRegisteredEvent event = new CitizenRegisteredEvent(savedCitizen.getId(), savedCitizen.getEmail(), savedCitizen.getAddress());
+        eventPublisher.publishEvent(event);
+        return savedCitizen;
     }
 
-    public CitizenLoggedInEvent login(CitizenDto citizenDto) {
-        if (validateCredentials(citizenDto.getEmail(), citizenDto.getPassword())) { // Beispielmethode zur Validierung
-            Citizen citizen = findByEmail(citizenDto.getEmail()); // Beispielmethode zum Finden des Benutzers
-
-            // Ereignis erstellen und zurückgeben
-            return new CitizenLoggedInEvent(citizenDto.getEmail(),citizenDto.getPassword());
-        } else {
-            throw new IllegalArgumentException("Invalid credentials");
+    public boolean login(CitizenDto citizenDto) {
+        try {
+            Citizen citizen = citizenRepository.findByEmail(citizenDto.getEmail());
+            if (citizen != null && validateCredentials(citizenDto.getEmail(), citizenDto.getPassword())) { // Beispielmethode zur Validierung
+                CitizenLoggedInEvent event = new CitizenLoggedInEvent(citizen.getEmail(),citizen.getPassword());
+                eventPublisher.publishEvent(event);
+            } else {
+                throw new IllegalArgumentException("Invalid credentials");
+            }
+        } catch (Exception e) {
+            return false;
         }
+        return true;
     }
 
     public boolean validateCredentials(String email, String password) {

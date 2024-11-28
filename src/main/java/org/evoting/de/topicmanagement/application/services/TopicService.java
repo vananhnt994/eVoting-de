@@ -1,7 +1,7 @@
-package org.evoting.de.voting.application.services;
+package org.evoting.de.votemanagement.application.services;
 
-import org.evoting.de.voting.domain.model.topic.Topic;
-import org.evoting.de.voting.domain.repository.TopicRepository;
+import org.evoting.de.votemanagement.domain.model.topic.Topic;
+import org.evoting.de.votemanagement.domain.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
