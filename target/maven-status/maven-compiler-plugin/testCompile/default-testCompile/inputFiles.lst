@@ -1,0 +1,12 @@
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\citizenmanagement\application\controller\CitizenControllerTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\citizenmanagement\application\services\CitizenServiceTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\citizenmanagement\domain\model\admin\AdministratorTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\citizenmanagement\domain\model\citizen\CitizenTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\application\controller\TopicControllerTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\application\services\TopicServiceTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\domain\model\topic\TopicListTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\domain\model\topic\TopicTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\domain\model\vote\VotingLLMTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\domain\model\vote\VotingResultLLMTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\domain\model\vote\VotingResultTest.java
+H:\Java\eVoting-DE\src\test\java\org\evoting\de\topicmanagement\domain\model\vote\VotingTest.java

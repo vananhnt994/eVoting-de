@@ -1,0 +1,46 @@
+name: Measure coverage
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'temurin'
+          cache: maven
+      - name: Run Build
+        run: mvn -B package --file pom.xml
+      - name: Upload Report
+        uses: 'actions/upload-artifact@v4'
+        with:
+          name: report
+          path: ${{ github.workspace }}/build/coverage-reports/index.html
+  
+      - name: Jacoco Report to PR
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.7.1
+        with:
+          paths: ${{ github.workspace }}/build/coverage-reports/jacoco.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
+          debug-mode: false
+                  
+      - name: Get the Coverage info
+        run: |
+          echo "Total coverage coverage-overall ${{ steps.jacoco.outputs.coverage-overall }}"
+          echo "Changed Files coverage ${{ steps.jacoco.outputs.coverage-changed-files }}"
+          echo "Coverage coveragePercentage ${{ steps.jacoco_reporter.outputs.coveragePercentage }}"
+          echo "Coverage coveragePercentageString ${{ steps.jacoco_reporter.outputs.coveragePercentageString }}"
+  
+      - name: Publish Coverager Workflow Build Summary
+        run: echo "${{ steps.jacoco.outputs.coverage-overall }}" >> $GITHUB_STEP_SUMMARY
