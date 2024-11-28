@@ -1,6 +1,5 @@
-package org.evoting.de.unittests.entities;
+package org.evoting.de.citizenmanagement.domain.model.admin;
 
-import org.evoting.de.citizenmanagement.domain.model.admin.Administrator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

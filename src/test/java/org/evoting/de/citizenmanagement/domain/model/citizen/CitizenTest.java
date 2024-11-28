@@ -1,6 +1,5 @@
-package org.evoting.de.unittests.entities;
+package org.evoting.de.citizenmanagement.domain.model.citizen;
 
-import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

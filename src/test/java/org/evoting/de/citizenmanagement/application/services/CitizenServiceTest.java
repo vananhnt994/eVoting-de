@@ -1,9 +1,8 @@
-package org.evoting.de.unittests.service;
+package org.evoting.de.citizenmanagement.application.services;
 
 import org.evoting.de.citizenmanagement.application.dto.CitizenDto;
 import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
 import org.evoting.de.citizenmanagement.domain.repository.CitizenRepository;
-import org.evoting.de.citizenmanagement.application.services.CitizenService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mindrot.jbcrypt.BCrypt;

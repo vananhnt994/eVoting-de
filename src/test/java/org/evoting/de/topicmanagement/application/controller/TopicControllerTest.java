@@ -1,8 +1,8 @@
-package org.evoting.de.unittests.application.controller;
+package org.evoting.de.topicmanagement.application.controller;
 
 import org.evoting.de.application.controllers.TopicController;
-import org.evoting.de.topicmanagement.domain.model.topic.Topic;
 import org.evoting.de.topicmanagement.application.services.TopicService;
+import org.evoting.de.topicmanagement.domain.model.topic.Topic;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -13,9 +13,11 @@ import org.springframework.http.ResponseEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class TopicControllerTest {
 

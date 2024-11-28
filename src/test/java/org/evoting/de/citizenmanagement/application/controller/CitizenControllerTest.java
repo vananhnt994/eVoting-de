@@ -1,9 +1,9 @@
-package org.evoting.de.unittests.application.controller;
+package org.evoting.de.citizenmanagement.application.controller;
 
 import org.evoting.de.citizenmanagement.application.controllers.CitizenController;
 import org.evoting.de.citizenmanagement.application.dto.CitizenDto;
-import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
 import org.evoting.de.citizenmanagement.application.services.CitizenService;
+import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -13,7 +13,8 @@ import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class CitizenControllerTest {
 

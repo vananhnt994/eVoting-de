@@ -1,6 +1,5 @@
-package org.evoting.de.unittests.entities;
+package org.evoting.de.topicmanagement.domain.model.vote;
 
-import org.evoting.de.topicmanagement.domain.model.vote.VotingResult;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
