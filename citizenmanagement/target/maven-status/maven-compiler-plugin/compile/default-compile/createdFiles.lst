@@ -1,0 +1,15 @@
+org\evoting\domain\model\citizen\Citizen.class
+org\evoting\application\dto\CitizenDto.class
+org\evoting\domain\model\admin\Administrator.class
+org\evoting\application\controllers\CitizenController.class
+org\evoting\infrastructure\persistence\JpaCitizenRepository.class
+org\evoting\domain\events\CitizenLoggedInEvent.class
+org\evoting\infrastructure\messaging\CitizenRegisteredEventListener.class
+org\evoting\application\EventListener.class
+org\evoting\application\services\CitizenService.class
+org\evoting\infrastructure\messaging\CitizenLoggedInEventListener.class
+org\evoting\application\config\DataSourceConfig.class
+org\evoting\CitizenApplication.class
+org\evoting\domain\events\CitizenRegisteredEvent.class
+org\evoting\application\config\WebConfig.class
+org\evoting\domain\repository\CitizenRepository.class
