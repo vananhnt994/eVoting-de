@@ -1,0 +1,11 @@
+org\evoting\application\services\TopicService.class
+org\evoting\application\controllers\TopicController.class
+org\evoting\domain\model\topic\Topic.class
+org\evoting\domain\model\vote\Vote.class
+org\evoting\domain\repository\TopicRepository.class
+org\evoting\TopicApplication.class
+org\evoting\application\config\WebConfig.class
+org\evoting\domain\model\topic\TopicList.class
+org\evoting\application\EventListener.class
+org\evoting\domain\model\vote\VotingResult.class
+org\evoting\application\config\DataSourceConfig.class

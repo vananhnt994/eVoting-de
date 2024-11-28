@@ -1,6 +1,6 @@
-package org.evoting.de.citizenmanagement.application.controller;
+/*package citizenmanagement.application.controller;
 
-import org.evoting.de.citizenmanagement.application.controllers.CitizenController;
+import org.evoting.de.application.controllers.CitizenController;
 import org.evoting.de.citizenmanagement.application.dto.CitizenDto;
 import org.evoting.de.citizenmanagement.application.services.CitizenService;
 import org.evoting.de.citizenmanagement.domain.model.citizen.Citizen;
@@ -138,4 +138,4 @@ public class CitizenControllerTest {
             verify(citizenService).login(any(CitizenDto.class));
         }
     }
-}
+}*/

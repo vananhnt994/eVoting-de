@@ -1,4 +1,4 @@
-package topicmanagement.domain.model.vote;
+package org.evoting.domain.model.vote;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;

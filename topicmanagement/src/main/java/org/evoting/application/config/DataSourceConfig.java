@@ -1,4 +1,4 @@
-package topicmanagement.application.config;
+package org.evoting.application.config;
 
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 @Configuration
 //@EnableJpaRepositories(basePackages = "org.evoting.de.repositories")
-@ComponentScan(basePackages = "org.evoting.de")
+@ComponentScan(basePackages = "org.evoting")
 public class DataSourceConfig {
 
     @Bean

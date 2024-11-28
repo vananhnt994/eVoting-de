@@ -4,6 +4,7 @@ H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\application\contr
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\application\dto\CitizenDto.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\application\EventListener.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\application\services\CitizenService.java
+H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\CitizenApplication.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\domain\events\CitizenLoggedInEvent.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\domain\events\CitizenRegisteredEvent.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\domain\model\admin\Administrator.java

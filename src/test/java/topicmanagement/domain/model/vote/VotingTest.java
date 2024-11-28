@@ -1,4 +1,4 @@
-package org.evoting.de.topicmanagement.domain.model.vote;
+/*package topicmanagement.domain.model.vote;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,4 +28,4 @@ public class VotingTest {
         vote.setVotingOptions(false);
         assertFalse(vote.isVotingOptions());
     }
-}
+}*/

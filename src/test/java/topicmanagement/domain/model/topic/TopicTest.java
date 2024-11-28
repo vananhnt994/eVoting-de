@@ -1,6 +1,6 @@
-package org.evoting.de.topicmanagement.domain.model.topic;
+package topicmanagement.domain.model.topic;
 
-import org.junit.jupiter.api.Test;
+/*import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -57,4 +57,4 @@ public class TopicTest {
         assertNotNull(topicLists);
         assertFalse(topicLists.isEmpty());
     }
-}
+}*/

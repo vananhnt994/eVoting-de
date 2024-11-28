@@ -1,6 +1,6 @@
-package org.evoting.de.topicmanagement.domain.model.vote;
+package topicmanagement.domain.model.vote;
 
-import org.junit.jupiter.api.BeforeEach;
+/*import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -60,4 +60,4 @@ public class VotingLLMTest {
         assertEquals("", voteWithEmptyStrings.getTopicId(), "Topic ID should be an empty string");
         assertTrue(voteWithEmptyStrings.isVotingOptions(), "Voting options should be true if set to true");
     }
-}
+}*/

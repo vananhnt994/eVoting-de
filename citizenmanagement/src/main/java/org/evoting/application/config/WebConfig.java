@@ -17,7 +17,7 @@ public class WebConfig implements WebFluxConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/citizen")
+        registry.addMapping("/api/citizens")
                 .allowedOrigins("http://localhost:3000") // Ersetze dies durch die URL deines Frontends
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true);
@@ -31,7 +31,7 @@ public class WebConfig implements WebFluxConfigurer {
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/citizen", configuration);
+        source.registerCorsConfiguration("/api/citizens", configuration);
         return source;
     }
 }

@@ -1,6 +1,8 @@
-package topicmanagement.domain.model.topic;
+package org.evoting.domain.model.topic;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 import java.util.Set;
 
