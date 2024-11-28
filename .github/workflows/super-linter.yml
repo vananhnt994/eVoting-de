@@ -10,7 +10,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    types: [opened, reopened]
 jobs:
   run-lint:
     runs-on: ubuntu-latest
@@ -28,5 +28,7 @@ jobs:
           VALIDATE_JAVA_CHECKSTYLE: true
           VALIDATE_GOOGLE_JAVA_FORMAT: true
           FIX_GOOGLE_JAVA_FORMAT: true
+          SAVE_SUPER_LINTER_SUMMARY: true
+          ENABLE_GITHUB_ACTIONS_STEP_SUMMARY: true
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
