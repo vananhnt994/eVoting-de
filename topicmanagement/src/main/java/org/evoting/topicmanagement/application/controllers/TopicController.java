@@ -10,7 +10,7 @@ import org.evoting.topicmanagement.domain.model.topic.Topic;
 import java.util.List;
 
 @RestController
-@RequestMapping("/topics")
+@RequestMapping("/api/topics")
 @CrossOrigin(origins = "http://localhost:3000")
 public class TopicController {
 
