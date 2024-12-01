@@ -1,4 +1,4 @@
-package org.evoting.application.config;
+package org.evoting.topicmanagement.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,7 @@ public class WebConfig implements WebFluxConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/topics")
+        registry.addMapping("/api/topics/**")
                 .allowedOrigins("http://localhost:3000") // Ersetze dies durch die URL deines Frontends
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true);
@@ -31,7 +31,7 @@ public class WebConfig implements WebFluxConfigurer {
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/topics", configuration);
+        source.registerCorsConfiguration("/api/topics/**", configuration);
         return source;
     }
 }

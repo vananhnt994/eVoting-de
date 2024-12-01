@@ -1,4 +1,6 @@
 org\evoting\citizenmanagement\domain\model\admin\Administrator.class
+org\evoting\citizenmanagement\infrastructure\aspects\LoggingAspect.class
+org\evoting\citizenmanagement\infrastructure\aspects\PerformanceMonitoring.class
 org\evoting\citizenmanagement\application\dto\CitizenDto.class
 org\evoting\citizenmanagement\infrastructure\messaging\CitizenLoggedInEventListener.class
 org\evoting\citizenmanagement\domain\model\citizen\Citizen.class
@@ -14,3 +16,4 @@ org\evoting\citizenmanagement\application\config\DataSourceConfig.class
 org\evoting\citizenmanagement\infrastructure\messaging\CitizenRegisteredEventListener.class
 org\evoting\citizenmanagement\domain\events\CitizenLoggedInEvent.class
 org\evoting\citizenmanagement\CitizenApplication.class
+org\evoting\citizenmanagement\application\config\EurekaClientConfig.class

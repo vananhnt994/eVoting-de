@@ -1,9 +1,9 @@
-package org.evoting.application.services;
+package org.evoting.topicmanagement.application.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.evoting.domain.model.topic.Topic;
-import org.evoting.domain.repository.TopicRepository;
+import org.evoting.topicmanagement.domain.model.topic.Topic;
+import org.evoting.topicmanagement.domain.repository.TopicRepository;
 
 import java.util.List;
 

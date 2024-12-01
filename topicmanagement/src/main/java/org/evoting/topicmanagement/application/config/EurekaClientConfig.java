@@ -1,4 +1,4 @@
-package org.evoting.citizenmanagement.application.config;
+package org.evoting.topicmanagement.application.config;
 
 import com.netflix.discovery.AbstractDiscoveryClientOptionalArgs;
 import com.netflix.discovery.shared.transport.jersey.TransportClientFactories;

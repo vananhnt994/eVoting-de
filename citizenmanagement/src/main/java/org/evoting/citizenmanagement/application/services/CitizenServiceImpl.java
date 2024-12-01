@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 @Service
@@ -29,6 +30,10 @@ public class CitizenServiceImpl {
         return citizenRepository.findByEmail(email);
     }
 
+    public List<Citizen> findAll() {
+        return citizenRepository.findAll();
+    }
+
     public void createCitizen(CitizenDto citizenDto) throws Exception {
         Citizen citizen = new Citizen();
         citizen.setEmail(citizenDto.getEmail());
@@ -46,12 +51,11 @@ public class CitizenServiceImpl {
         citizenRepository.save(citizen);
     }
 
-    public boolean login(CitizenDto citizenDto) {
+    public void login(CitizenDto citizenDto) {
         Citizen citizen = citizenRepository.findByEmail(citizenDto.getEmail());
         if (citizen != null && validateCredentials(citizenDto.getEmail(), citizenDto.getPassword())) { // Beispielmethode zur Validierung
             CitizenLoggedInEvent event = new CitizenLoggedInEvent(citizen.getEmail(),citizen.getPassword());
             eventPublisher.publishEvent(event);
-            return true;
 
         } else {
             throw new IllegalArgumentException("Invalid credentials");

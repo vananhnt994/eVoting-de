@@ -1,4 +1,4 @@
-package org.evoting.domain.model.vote;
+package org.evoting.topicmanagement.domain.model.vote;
 
 //import java.util.Date;
 import jakarta.persistence.Entity;

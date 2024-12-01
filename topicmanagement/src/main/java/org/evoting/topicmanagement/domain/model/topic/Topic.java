@@ -1,4 +1,4 @@
-package org.evoting.domain.model.topic;
+package org.evoting.topicmanagement.domain.model.topic;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

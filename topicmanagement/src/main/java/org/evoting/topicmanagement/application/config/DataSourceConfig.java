@@ -1,6 +1,5 @@
-package org.evoting.citizenmanagement.application.config;
+package org.evoting.topicmanagement.application.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -12,8 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "org.evoting.citizenmanagement.domain.repository")
-@ComponentScan(basePackages = "org.evoting.citizenmanagement")
+@EnableJpaRepositories(basePackages = "org.evoting.topicmanagement.domain.repository")
+@ComponentScan(basePackages = "org.evoting.topicmanagement")
 public class DataSourceConfig {
 
     @Bean
