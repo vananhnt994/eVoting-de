@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.regex.Pattern;
 
 @RestController
@@ -22,6 +23,10 @@ public class CitizenController {
 
     public CitizenController(CitizenServiceImpl citizenServiceImpl) {
         this.citizenService = citizenServiceImpl;
+    }
+    @GetMapping("/")
+    public List<Citizen> getAllCitizens() {
+        return citizenService.findAll();
     }
 
     @PostMapping(value = "/signup",consumes={"application/json"})
@@ -47,7 +52,7 @@ public class CitizenController {
             if (!validateEmail(citizenDto.getEmail())) {
                 throw new IllegalArgumentException("Invalid email format");
             }
-            boolean result = citizenService.login(citizenDto);
+            citizenService.login(citizenDto);
             System.out.println("Login erfolgreich!");
             return ResponseEntity.status(200).body(citizenService.findByEmail(citizenDto.getEmail()));
         } catch (Exception e) {

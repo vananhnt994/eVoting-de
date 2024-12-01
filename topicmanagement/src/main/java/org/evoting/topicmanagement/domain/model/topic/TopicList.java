@@ -1,4 +1,4 @@
-package org.evoting.domain.model.topic;
+package org.evoting.topicmanagement.domain.model.topic;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -14,9 +14,9 @@ public class TopicList {
     @ManyToMany
     private Set<Topic> topics; // Beziehung zu Topics
     // Constructor
-    public TopicList(String id, String postalCode, String districtName) {
+    public TopicList(String id, String postalCode, String cityName) {
         this.id = id;
-        this.cityName = districtName;
+        this.cityName = cityName;
     }
 
     public TopicList() {
@@ -32,11 +32,11 @@ public class TopicList {
         this.id = id;
     }
 
-    public String getDistrictName() {
+    public String getCityName() {
         return cityName;
     }
 
-    public void setDistrictName(String districtName) {
+    public void setCityName(String districtName) {
         this.cityName = districtName;
     }
 
