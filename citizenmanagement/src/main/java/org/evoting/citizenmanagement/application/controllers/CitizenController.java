@@ -1,14 +1,11 @@
 package org.evoting.citizenmanagement.application.controllers;
 
 import org.evoting.citizenmanagement.application.dto.CitizenDto;
-import org.evoting.citizenmanagement.application.services.CitizenServiceImpl;
+import org.evoting.citizenmanagement.application.services.CitizenService;
 import org.evoting.citizenmanagement.domain.model.citizen.Citizen;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Mono;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -17,11 +14,11 @@ import java.util.regex.Pattern;
 @CrossOrigin(origins = "http://localhost:3000")
 public class CitizenController {
 
-    private final CitizenServiceImpl citizenService;
+    private final CitizenService citizenService;
     private static final String EMAIL_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
     private static final String PASSWORD_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$";
 
-    public CitizenController(CitizenServiceImpl citizenServiceImpl) {
+    public CitizenController(CitizenService citizenServiceImpl) {
         this.citizenService = citizenServiceImpl;
     }
     @GetMapping("/")
