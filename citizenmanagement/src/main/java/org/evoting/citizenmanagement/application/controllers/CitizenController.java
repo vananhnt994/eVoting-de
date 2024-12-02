@@ -31,6 +31,7 @@ public class CitizenController {
         try {
             if (!validateEmail(citizenDto.getEmail())) throwIllegalArgumentException("Invalid email format");
             if(!validatePassword(citizenDto.getPassword())) throwIllegalArgumentException("Password must be at least 8 characters long and include a number, a lowercase letter, an uppercase letter, and a special character.");
+            if(citizenService.findByEmail(citizenDto.getEmail()) != null) throw new Exception("Email already exists");
             citizenService.createCitizen(citizenDto);
             System.out.println("User " +citizenDto.getEmail() + " ist registriert");
             return ResponseEntity.ok().body(citizenService.findByEmail(citizenDto.getEmail()));

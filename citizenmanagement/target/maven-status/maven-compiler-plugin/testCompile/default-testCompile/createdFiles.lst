@@ -1,0 +1,3 @@
+org\evoting\citizenmanagement\application\controllers\CitizenControllerTest.class
+org\evoting\citizenmanagement\application\domain\model\CitizenTest.class
+org\evoting\citizenmanagement\application\services\CitizenServiceTest.class

@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0 s <<< FAILURE! -- in org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest
+org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest.testFindByEmail_NotFound -- Time elapsed: 0 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [org.evoting.citizenmanagement.domain.repository.CitizenRepository citizenRepository] in constructor [org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest(org.evoting.citizenmanagement.domain.repository.CitizenRepository)].
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest.testFindByEmail_Success -- Time elapsed: 0 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [org.evoting.citizenmanagement.domain.repository.CitizenRepository citizenRepository] in constructor [org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest(org.evoting.citizenmanagement.domain.repository.CitizenRepository)].
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest.testSaveCitizen -- Time elapsed: 0 s <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [org.evoting.citizenmanagement.domain.repository.CitizenRepository citizenRepository] in constructor [org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest(org.evoting.citizenmanagement.domain.repository.CitizenRepository)].
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

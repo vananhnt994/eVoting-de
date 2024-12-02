@@ -102,13 +102,13 @@ class CitizenServiceTest {
         // Arrange
         CitizenDto citizenDto = new CitizenDto();
         citizenDto.setEmail("test@example.com");
-        citizenDto.setPassword("Password123!");
+        citizenDto.setPassword("Thisisamess2024!");
 
         Citizen citizen = new Citizen();
         citizen.setEmail("test@example.com");
 
         when(citizenRepository.findByEmail(any(String.class))).thenReturn(citizen);
-        when(citizenService.validateCredentials(any(String.class), any(String.class))).thenReturn(true);
+        assertTrue(citizenService.validateCredentials(citizenDto.getEmail(), citizenDto.getPassword()));
 
         // Act
         assertDoesNotThrow(() -> {
@@ -125,7 +125,7 @@ class CitizenServiceTest {
         citizenDto.setEmail("test@example.com");
         citizenDto.setPassword("WrongPassword");
 
-        when(citizenRepository.findByEmail(any(String.class))).thenReturn(new Citizen());
+        when(citizenRepository.findByEmail(citizenDto.getEmail())).thenReturn(any(Citizen.class));
 
         // Act & Assert
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {

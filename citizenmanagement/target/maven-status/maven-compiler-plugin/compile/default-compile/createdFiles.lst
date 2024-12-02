@@ -5,9 +5,9 @@ org\evoting\citizenmanagement\application\dto\CitizenDto.class
 org\evoting\citizenmanagement\infrastructure\messaging\CitizenLoggedInEventListener.class
 org\evoting\citizenmanagement\domain\model\citizen\Citizen.class
 org\evoting\citizenmanagement\infrastructure\persistence\JpaCitizenRepository.class
-org\evoting\citizenmanagement\application\services\CitizenServiceImpl.class
 org\evoting\citizenmanagement\domain\events\CitizenRegisteredEvent.class
 org\evoting\citizenmanagement\application\controllers\CitizenController.class
+org\evoting\citizenmanagement\domain\model\citizen\Address.class
 org\evoting\citizenmanagement\application\services\CitizenService.class
 org\evoting\citizenmanagement\application\config\WebConfig.class
 org\evoting\citizenmanagement\domain\repository\CitizenRepository.class

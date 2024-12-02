@@ -10,8 +10,8 @@ H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\infrastructure\aspects\LoggingAspect.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\application\services\CitizenService.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\infrastructure\aspects\PerformanceMonitoring.java
+H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\domain\model\citizen\Address.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\infrastructure\messaging\CitizenLoggedInEventListener.java
-H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\application\services\CitizenServiceImpl.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\application\config\EurekaClientConfig.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\application\config\WebConfig.java
 H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting\citizenmanagement\infrastructure\messaging\CitizenRegisteredEventListener.java
