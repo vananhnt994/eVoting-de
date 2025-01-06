@@ -1,5 +1,0 @@
-# Created at 2024-12-02T17:59:35.322
-Boot Manifest-JAR contains absolute paths in classpath 'H:\Java\eVoting-DE\topicmanagement\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

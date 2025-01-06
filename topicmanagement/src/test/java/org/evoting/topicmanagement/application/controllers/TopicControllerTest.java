@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,6 +30,8 @@ class TopicControllerTest {
     private TopicController topicController;
 
     private MockMvc mockMvc;
+    final LocalDateTime start = LocalDateTime.of(2020,1,1,0,0,0) ;
+    final LocalDateTime end = LocalDateTime.of(2020,6,1,0,0,0) ;
 
     @BeforeEach
     void setUp() {
@@ -42,8 +44,8 @@ class TopicControllerTest {
         // Arrange
         String address = "123 Main St";
         List<Topic> topics = Arrays.asList(
-                new Topic("1", "Description for Topic 1"),
-                new Topic("2", "Description for Topic 2")
+                new Topic("1", "Description for Topic 1",true, start, end),
+                new Topic("2", "Description for Topic 2",true, start,end)
         );
 
         when(topicService.getTopicsByAddress(address)).thenReturn(topics);

@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b74062b9-1216-4922-b0e3-911f99b126cf" name="Changes" comment="merg changes">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/citizenmanagement-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/CitizenApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/EventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/config/DataSourceConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/config/EurekaClientConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/controllers/CitizenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/dto/CitizenDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/application/services/CitizenService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/domain/events/CitizenLoggedInEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/domain/events/CitizenRegisteredEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/domain/model/admin/Administrator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/domain/model/citizen/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/domain/model/citizen/Citizen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/domain/repository/CitizenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/infrastructure/aspects/LoggingAspect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/infrastructure/aspects/PerformanceMonitoring.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/infrastructure/messaging/CitizenLoggedInEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/infrastructure/messaging/CitizenRegisteredEventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/classes/org/evoting/citizenmanagement/infrastructure/persistence/JpaCitizenRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/jacoco.exec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-25-01_732.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-27-00_564.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-28-56_721.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-30-22_655.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-34-34_214.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-35-36_184.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-41-10_402.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-47-50_666.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-48-55_616.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-51-11_931.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-52-07_107.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-54-12_139.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-57-39_563.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T17-58-01_653.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/2024-12-02T18-14-44_746.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/TEST-org.evoting.citizenmanagement.application.controllers.CitizenControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/TEST-org.evoting.citizenmanagement.application.domain.model.CitizenTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/TEST-org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/TEST-org.evoting.citizenmanagement.application.services.CitizenServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/org.evoting.citizenmanagement.application.controllers.CitizenControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/org.evoting.citizenmanagement.application.domain.model.CitizenTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/org.evoting.citizenmanagement.application.domain.repositories.CitizenRepositoryTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/surefire-reports/org.evoting.citizenmanagement.application.services.CitizenServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/test-classes/org/evoting/citizenmanagement/application/controllers/CitizenControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/test-classes/org/evoting/citizenmanagement/application/domain/model/CitizenTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citizenmanagement/target/test-classes/org/evoting/citizenmanagement/application/services/CitizenServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/eVoting-DE/org/evoting/ApiGatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/eVoting-DE/org/evoting/config/DataSourceConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/eVoting-DE/org/evoting/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/ApiGatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/config/EurekaClientConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/config/GatewayConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/config/LoggingGatewayFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/gateway/org/evoting/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/src/main/java/org/evoting/topicmanagement/application/services/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/topicmanagement/src/main/java/org/evoting/topicmanagement/application/services/TopicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/src/main/java/org/evoting/topicmanagement/domain/model/topic/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/topicmanagement/src/main/java/org/evoting/topicmanagement/domain/model/topic/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/src/test/java/org/evoting/topicmanagement/application/controllers/TopicControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topicmanagement/src/test/java/org/evoting/topicmanagement/application/controllers/TopicControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/src/test/java/org/evoting/topicmanagement/application/domain/model/TopicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topicmanagement/src/test/java/org/evoting/topicmanagement/application/domain/model/TopicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/src/test/java/org/evoting/topicmanagement/application/services/TopicServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/topicmanagement/src/test/java/org/evoting/topicmanagement/application/services/TopicServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/TopicApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/EventListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/config/DataSourceConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/config/EurekaClientConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/controllers/TopicController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/dto/TopicListDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/application/services/TopicService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/domain/model/topic/Topic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/domain/model/topic/TopicList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/domain/model/vote/Vote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/domain/model/vote/VotingResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/classes/org/evoting/topicmanagement/domain/repository/TopicRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/jacoco.exec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/2024-12-02T17-58-17_748.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/2024-12-02T17-59-35_212.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/2024-12-02T18-04-39_437.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/2024-12-02T18-05-10_989.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/2024-12-02T18-14-44_746.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/TEST-org.evoting.topicmanagement.application.controllers.TopicControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/TEST-org.evoting.topicmanagement.application.domain.model.TopicTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/TEST-org.evoting.topicmanagement.application.services.TopicServiceTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/org.evoting.topicmanagement.application.controllers.TopicControllerTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/org.evoting.topicmanagement.application.domain.model.TopicTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/surefire-reports/org.evoting.topicmanagement.application.services.TopicServiceTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/test-classes/org/evoting/topicmanagement/application/controllers/TopicControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/test-classes/org/evoting/topicmanagement/application/domain/model/TopicTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/target/test-classes/org/evoting/topicmanagement/application/services/TopicServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topicmanagement/topicmanagement-1.0-SNAPSHOT.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="H:\Java\eVoting-DE\htmlReport" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="workflow" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vananhnt994&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:vananhnt994/eVoting-de.git&quot;,
+    &quot;accountId&quot;: &quot;5f0ac17e-0dae-4a55-b189-89c8feb9e690&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2oD0B9dJMLa4mHWXHuRS8gwK6cy" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenControllerLLmTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenControllerTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenControllerTest.testLogin_Failed.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenControllerTest.testRegisterNewCitizen_InvalidEmail.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CitizenServiceTest.testLogin_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TopicTest.testConstructorAndGetters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in eVoting-DE.executor&quot;: &quot;Coverage&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CitizenApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.TopicApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;vananh&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;H:/Java/eVoting-DE/citizenmanagement/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/Java/eVoting-DE/citizenmanagement&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Java\eVoting-DE\src\main\java\org\evoting\config" />
+      <recent name="H:\Java\eVoting-DE\topicmanagement\src\main\java\org\evoting\topicmanagement\application\config" />
+      <recent name="H:\Java\eVoting-DE\eureka" />
+      <recent name="H:\Java\eVoting-DE" />
+      <recent name="H:\Java\eVoting-DE\topicmanagement\src\main\java\org\evoting" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\Java\eVoting-DE\topicmanagement\src\main\resources" />
+      <recent name="H:\Java\eVoting-DE\src\main\resources" />
+      <recent name="H:\Java\eVoting-DE\citizenmanagement\src\main\resources" />
+      <recent name="H:\Java\eVoting-DE\src\main\java\org\evoting" />
+      <recent name="H:\Java\eVoting-DE\citizenmanagement\src\main\java\org\evoting" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.evoting.de.user.domain.events" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.evoting" />
+      <recent name="" />
+      <recent name="org.evoting.de.topicmanagement.application.services" />
+      <recent name="org.evoting.de.topicmanagement.domain.model.vote" />
+      <recent name="org.evoting.de.topicmanagement.domain.model.topic" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.evoting.config" />
+      <recent name="org.evoting.de.topicmanagement.application" />
+      <recent name="org.evoting.de.citizenmanagement.application.services" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.evoting.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.evoting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.evoting.de.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.evoting.de.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CitizenApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="citizenmanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.evoting.citizenmanagement.CitizenApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.evoting.citizenmanagement.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.evoting.eureka.EurekaApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.evoting.eureka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TopicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="topicmanagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.evoting.TopicApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.evoting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ApiGatewayApplication (1)" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.CitizenApplication" />
+      <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.TopicApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.TopicApplication" />
+        <item itemvalue="Spring Boot.CitizenApplication" />
+        <item itemvalue="Spring Boot.EurekaApplication" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication (1)" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b74062b9-1216-4922-b0e3-911f99b126cf" name="Changes" comment="" />
+      <created>1730388701990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730388701990</updated>
+      <workItem from="1730388702829" duration="15992000" />
+      <workItem from="1730724321069" duration="11614000" />
+      <workItem from="1730748006833" duration="12438000" />
+      <workItem from="1730760600986" duration="1973000" />
+      <workItem from="1730798784345" duration="17252000" />
+      <workItem from="1730915758285" duration="1007000" />
+      <workItem from="1730916785898" duration="2114000" />
+      <workItem from="1731099350188" duration="3699000" />
+      <workItem from="1731191833220" duration="2911000" />
+      <workItem from="1731260430949" duration="1287000" />
+      <workItem from="1731337960237" duration="1417000" />
+      <workItem from="1731347574116" duration="2438000" />
+      <workItem from="1731358502339" duration="2212000" />
+      <workItem from="1731423260893" duration="6049000" />
+      <workItem from="1731786733637" duration="12107000" />
+      <workItem from="1731873905153" duration="7919000" />
+      <workItem from="1731939653245" duration="2868000" />
+      <workItem from="1732032267530" duration="2533000" />
+      <workItem from="1732642278969" duration="11295000" />
+      <workItem from="1732704642998" duration="468000" />
+      <workItem from="1732815721074" duration="16343000" />
+      <workItem from="1733000059929" duration="9770000" />
+      <workItem from="1733010023501" duration="9133000" />
+      <workItem from="1733054980485" duration="16068000" />
+      <workItem from="1733155275489" duration="7919000" />
+      <workItem from="1733240173714" duration="26000" />
+      <workItem from="1733240210789" duration="174000" />
+      <workItem from="1733240390407" duration="2927000" />
+      <workItem from="1734300390746" duration="1802000" />
+      <workItem from="1735896048454" duration="5014000" />
+      <workItem from="1736191229178" duration="873000" />
+    </task>
+    <task id="LOCAL-00001" summary="merg changes">
+      <option name="closed" value="true" />
+      <created>1730762514506</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730762514506</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="merg changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="merg changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/topicmanagement/domain/model/vote/Vote.java</url>
+          <line>18</line>
+          <properties field="startDate" class="topicmanagement.domain.model.vote.Vote" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/eVoting_DE$java_in_eVoting_DE.ic" NAME="java in eVoting-DE Coverage Results" MODIFIED="1731787842212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/eVoting_DE$Main.ic" NAME="Main Coverage Results" MODIFIED="1731787201148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>org.evoting.de.*</FILTER>
+    </SUITE>
+  </component>
+</project>

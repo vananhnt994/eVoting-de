@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 class TopicServiceTest {
+    final LocalDateTime start = LocalDateTime.of(2020,1,1,0,0,0) ;
+    final LocalDateTime end = LocalDateTime.of(2020,6,1,0,0,0) ;
 
     @Mock
     private TopicRepository topicRepository;
@@ -34,8 +37,8 @@ class TopicServiceTest {
         // Arrange
         String address = "123 Main St";
         List<Topic> topics = Arrays.asList(
-                new Topic("1", "Description for Topic 1"),
-                new Topic("2", "Description for Topic 2")
+                new Topic("1", "Description for Topic 1",true,start,end),
+                new Topic("2", "Description for Topic 2",true,start,end)
         );
 
         when(topicRepository.findByCityName(address)).thenReturn(topics);
