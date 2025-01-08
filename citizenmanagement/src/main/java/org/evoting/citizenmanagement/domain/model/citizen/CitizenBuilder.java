@@ -49,7 +49,7 @@ public class CitizenBuilder {
         return this;
     }
 
-    public Citizen build() throws Exception {
+    public Citizen build() {
 
         // Create and populate Citizen object
         Citizen citizen = new Citizen();
