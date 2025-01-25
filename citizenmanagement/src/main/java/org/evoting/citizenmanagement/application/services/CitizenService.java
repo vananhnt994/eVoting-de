@@ -3,13 +3,16 @@ package org.evoting.citizenmanagement.application.services;
 import org.evoting.citizenmanagement.application.dto.CitizenDto;
 import org.evoting.citizenmanagement.domain.events.CitizenLoggedInEvent;
 import org.evoting.citizenmanagement.domain.model.citizen.Citizen;
+import org.evoting.citizenmanagement.domain.model.citizen.CitizenBuilder;
 import org.evoting.citizenmanagement.domain.repository.CitizenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Service
 public class CitizenService {
@@ -34,18 +37,44 @@ public class CitizenService {
         return citizenRepository.findAll();
     }
 
-    public void createCitizen(CitizenDto citizenDto) throws Exception {
-        Citizen citizen = new Citizen();
-        citizen.setEmail(citizenDto.getEmail());
-        citizen.setPassword(citizenDto.getPassword());
-        citizen.setAddress(citizenDto.getAddress());
-        citizen.setLastName(citizenDto.getLastName());
-        citizen.setFirstName(citizenDto.getFirstName());
-        citizen.setBirthDate(citizenDto.getBirthDate());
 
-        if (citizenRepository != null && findByEmail(citizen.getEmail()) != null) {
+    /*public List<String> findAllEmails(){
+        return citizenRepository.findAll()
+                .stream()
+                .map(Citizen::getEmail)
+                .filter(email -> email != null && !email.isEmpty())
+                .collect(Collectors.toList());
+    }*/
+
+    public void createCitizen(CitizenDto citizenDto) throws Exception {
+
+        // Use the builder to create the Citizen object
+        Citizen citizen = CitizenBuilder.create()
+            // fill values of citizen object
+            .withEmail(citizenDto.getEmail())
+            .withPassword(citizenDto.getPassword())
+            .withLastName(citizenDto.getLastName())
+            .withFirstName(citizenDto.getFirstName())
+            .withAddress(citizenDto.getAddress())
+            .withBirthDate(citizenDto.getBirthDate())
+            .build();
+
+//        if (citizenRepository != null && findByEmail(citizen.getEmail()) != null) {
+//            throw new Exception("E-Mail bereits registriert");
+//        }
+        /*if (Optional.ofNullable(citizenRepository)
+                .map(repo -> findByEmail(citizen.getEmail()))
+                .filter(email -> email != null)
+                .isPresent()) {
             throw new Exception("E-Mail bereits registriert");
-        }
+        }*/
+        Optional.ofNullable(citizen.getEmail())
+                .flatMap(email -> Optional.ofNullable(findByEmail(email)))
+                .ifPresent(email -> {
+                    throw new RuntimeException("E-Mail bereits registriert");
+                });
+
+
         System.out.println("Bürger registriert: " + citizen.getLastname() + " " + citizen.getFirstName());
         assert citizenRepository != null;
         citizenRepository.save(citizen);
@@ -63,7 +92,12 @@ public class CitizenService {
     }
 
 
+
+
     public boolean validateCredentials(String email, String password) {
         return Pattern.matches(EMAIL_REGEX, email) && Pattern.matches(PASSWORD_REGEX, password);
     }
 }
+
+
+

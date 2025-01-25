@@ -1,5 +1,6 @@
 package org.evoting.citizenmanagement.application.services;
 
+import io.micrometer.core.instrument.config.validate.Validated;
 import org.evoting.citizenmanagement.application.dto.CitizenDto;
 import org.evoting.citizenmanagement.domain.events.CitizenLoggedInEvent;
 import org.evoting.citizenmanagement.domain.model.citizen.Citizen;
